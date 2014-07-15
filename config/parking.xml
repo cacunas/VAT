@@ -1,0 +1,889 @@
+<!DOCTYPE VideoAnalysis>
+<VideoAnalysis>
+ <Image IDimage="062665" />
+ <Image IDimage="062666" >
+  <Object beginX="128" beginY="280" IDobject="1" Nameobject="VEHICLE" endX="166" endY="287" />
+ </Image>
+ <Image IDimage="062667" >
+  <Object beginX="128" beginY="277" IDobject="1" Nameobject="VEHICLE" endX="165" endY="287" />
+ </Image>
+ <Image IDimage="062668" >
+  <Object beginX="126" beginY="273" IDobject="1" Nameobject="VEHICLE" endX="164" endY="287" />
+ </Image>
+ <Image IDimage="062669" >
+  <Object beginX="163" beginY="271" IDobject="1" Nameobject="VEHICLE" endX="126" endY="285" />
+ </Image>
+ <Image IDimage="062670" >
+  <Object beginX="161" beginY="267" IDobject="1" Nameobject="VEHICLE" endX="126" endY="286" />
+ </Image>
+ <Image IDimage="062671" >
+  <Object beginX="125" beginY="266" IDobject="1" Nameobject="VEHICLE" endX="163" endY="286" />
+ </Image>
+ <Image IDimage="062672" >
+  <Object beginX="161" beginY="262" IDobject="1" Nameobject="VEHICLE" endX="123" endY="285" />
+ </Image>
+ <Image IDimage="062673" >
+  <Object beginX="159" beginY="257" IDobject="1" Nameobject="VEHICLE" endX="123" endY="286" />
+ </Image>
+ <Image IDimage="062674" >
+  <Object beginX="159" beginY="255" IDobject="1" Nameobject="VEHICLE" endX="124" endY="285" />
+ </Image>
+ <Image IDimage="062675" >
+  <Object beginX="124" beginY="254" IDobject="1" Nameobject="VEHICLE" endX="161" endY="285" />
+ </Image>
+ <Image IDimage="062676" >
+  <Object beginX="121" beginY="249" IDobject="1" Nameobject="VEHICLE" endX="161" endY="285" />
+ </Image>
+ <Image IDimage="062677" >
+  <Object beginX="161" beginY="246" IDobject="1" Nameobject="VEHICLE" endX="121" endY="285" />
+ </Image>
+ <Image IDimage="062678" >
+  <Object beginX="160" beginY="244" IDobject="1" Nameobject="VEHICLE" endX="119" endY="286" />
+ </Image>
+ <Image IDimage="062679" >
+  <Object beginX="161" beginY="243" IDobject="1" Nameobject="VEHICLE" endX="119" endY="286" />
+ </Image>
+ <Image IDimage="062680" >
+  <Object beginX="161" beginY="239" IDobject="1" Nameobject="VEHICLE" endX="120" endY="286" />
+ </Image>
+ <Image IDimage="062681" >
+  <Object beginX="159" beginY="236" IDobject="1" Nameobject="VEHICLE" endX="118" endY="286" />
+ </Image>
+ <Image IDimage="062682" >
+  <Object beginX="161" beginY="233" IDobject="1" Nameobject="VEHICLE" endX="119" endY="285" />
+ </Image>
+ <Image IDimage="062683" >
+  <Object beginX="161" beginY="232" IDobject="1" Nameobject="VEHICLE" endX="118" endY="286" />
+ </Image>
+ <Image IDimage="062684" >
+  <Object beginX="160" beginY="229" IDobject="1" Nameobject="VEHICLE" endX="119" endY="285" />
+ </Image>
+ <Image IDimage="062685" >
+  <Object beginX="160" beginY="226" IDobject="1" Nameobject="VEHICLE" endX="120" endY="285" />
+ </Image>
+ <Image IDimage="062686" >
+  <Object beginX="160" beginY="223" IDobject="1" Nameobject="VEHICLE" endX="119" endY="285" />
+ </Image>
+ <Image IDimage="062687" >
+  <Object beginX="160" beginY="221" IDobject="1" Nameobject="VEHICLE" endX="120" endY="285" />
+ </Image>
+ <Image IDimage="062688" >
+  <Object beginX="160" beginY="218" IDobject="1" Nameobject="VEHICLE" endX="120" endY="285" />
+ </Image>
+ <Image IDimage="062689" >
+  <Object beginX="160" beginY="216" IDobject="1" Nameobject="VEHICLE" endX="120" endY="285" />
+ </Image>
+ <Image IDimage="062690" >
+  <Object beginX="159" beginY="214" IDobject="1" Nameobject="VEHICLE" endX="120" endY="285" />
+ </Image>
+ <Image IDimage="062691" >
+  <Object beginX="159" beginY="212" IDobject="1" Nameobject="VEHICLE" endX="121" endY="285" />
+ </Image>
+ <Image IDimage="062692" >
+  <Object beginX="159" beginY="209" IDobject="1" Nameobject="VEHICLE" endX="122" endY="285" />
+ </Image>
+ <Image IDimage="062693" >
+  <Object beginX="158" beginY="208" IDobject="1" Nameobject="VEHICLE" endX="121" endY="285" />
+ </Image>
+ <Image IDimage="062694" >
+  <Object beginX="159" beginY="205" IDobject="1" Nameobject="VEHICLE" endX="122" endY="285" />
+ </Image>
+ <Image IDimage="062695" >
+  <Object beginX="158" beginY="203" IDobject="1" Nameobject="VEHICLE" endX="122" endY="280" />
+ </Image>
+ <Image IDimage="062696" >
+  <Object beginX="158" beginY="277" IDobject="1" Nameobject="VEHICLE" endX="123" endY="202" />
+ </Image>
+ <Image IDimage="062697" >
+  <Object beginX="157" beginY="274" IDobject="1" Nameobject="VEHICLE" endX="123" endY="200" />
+ </Image>
+ <Image IDimage="062698" >
+  <Object beginX="157" beginY="272" IDobject="1" Nameobject="VEHICLE" endX="123" endY="199" />
+ </Image>
+ <Image IDimage="062699" >
+  <Object beginX="157" beginY="270" IDobject="1" Nameobject="VEHICLE" endX="124" endY="197" />
+ </Image>
+ <Image IDimage="062700" >
+  <Object beginX="157" beginY="267" IDobject="1" Nameobject="VEHICLE" endX="125" endY="196" />
+ </Image>
+ <Image IDimage="062701" >
+  <Object beginX="157" beginY="195" IDobject="1" Nameobject="VEHICLE" endX="123" endY="265" />
+ </Image>
+ <Image IDimage="062702" >
+  <Object beginX="157" beginY="194" IDobject="1" Nameobject="VEHICLE" endX="123" endY="266" />
+ </Image>
+ <Image IDimage="062703" >
+  <Object beginX="157" beginY="193" IDobject="1" Nameobject="VEHICLE" endX="124" endY="265" />
+ </Image>
+ <Image IDimage="062704" >
+  <Object beginX="156" beginY="192" IDobject="1" Nameobject="VEHICLE" endX="124" endY="263" />
+ </Image>
+ <Image IDimage="062705" >
+  <Object beginX="156" beginY="192" IDobject="1" Nameobject="VEHICLE" endX="124" endY="263" />
+ </Image>
+ <Image IDimage="062706" >
+  <Object beginX="156" beginY="192" IDobject="1" Nameobject="VEHICLE" endX="124" endY="263" />
+ </Image>
+ <Image IDimage="062707" >
+  <Object beginX="157" beginY="191" IDobject="1" Nameobject="VEHICLE" endX="123" endY="262" />
+ </Image>
+ <Image IDimage="062708" >
+  <Object beginX="157" beginY="191" IDobject="1" Nameobject="VEHICLE" endX="123" endY="262" />
+ </Image>
+ <Image IDimage="062709" >
+  <Object beginX="158" beginY="190" IDobject="1" Nameobject="VEHICLE" endX="125" endY="261" />
+ </Image>
+ <Image IDimage="062710" >
+  <Object beginX="158" beginY="190" IDobject="1" Nameobject="VEHICLE" endX="125" endY="261" />
+ </Image>
+ <Image IDimage="062711" >
+  <Object beginX="158" beginY="189" IDobject="1" Nameobject="VEHICLE" endX="123" endY="260" />
+ </Image>
+ <Image IDimage="062712" >
+  <Object beginX="158" beginY="189" IDobject="1" Nameobject="VEHICLE" endX="123" endY="260" />
+ </Image>
+ <Image IDimage="062713" >
+  <Object beginX="159" beginY="188" IDobject="1" Nameobject="VEHICLE" endX="123" endY="258" />
+ </Image>
+ <Image IDimage="062714" >
+  <Object beginX="159" beginY="188" IDobject="1" Nameobject="VEHICLE" endX="123" endY="258" />
+ </Image>
+ <Image IDimage="062715" >
+  <Object beginX="159" beginY="257" IDobject="1" Nameobject="VEHICLE" endX="125" endY="189" />
+ </Image>
+ <Image IDimage="062716" >
+  <Object beginX="159" beginY="187" IDobject="1" Nameobject="VEHICLE" endX="125" endY="257" />
+ </Image>
+ <Image IDimage="062717" >
+  <Object beginX="159" beginY="256" IDobject="1" Nameobject="VEHICLE" endX="124" endY="187" />
+  <Object beginX="170" beginY="282" IDobject="2" Nameobject="VEHICLE" endX="183" endY="286" />
+ </Image>
+ <Image IDimage="062718" >
+  <Object beginX="158" beginY="187" IDobject="1" Nameobject="VEHICLE" endX="123" endY="257" />
+  <Object beginX="168" beginY="274" IDobject="2" Nameobject="VEHICLE" endX="204" endY="285" />
+ </Image>
+ <Image IDimage="062719" >
+  <Object beginX="158" beginY="186" IDobject="1" Nameobject="VEHICLE" endX="124" endY="256" />
+  <Object beginX="168" beginY="267" IDobject="2" Nameobject="VEHICLE" endX="206" endY="285" />
+ </Image>
+ <Image IDimage="062720" >
+  <Object beginX="158" beginY="185" IDobject="1" Nameobject="VEHICLE" endX="125" endY="255" />
+  <Object beginX="167" beginY="257" IDobject="2" Nameobject="VEHICLE" endX="206" endY="285" />
+ </Image>
+ <Image IDimage="062721" >
+  <Object beginX="158" beginY="185" IDobject="1" Nameobject="VEHICLE" endX="124" endY="253" />
+  <Object beginX="206" beginY="252" IDobject="2" Nameobject="VEHICLE" endX="167" endY="285" />
+ </Image>
+ <Image IDimage="062722" >
+  <Object beginX="158" beginY="184" IDobject="1" Nameobject="VEHICLE" endX="125" endY="252" />
+  <Object beginX="208" beginY="246" IDobject="2" Nameobject="VEHICLE" endX="167" endY="285" />
+ </Image>
+ <Image IDimage="062723" >
+  <Object beginX="158" beginY="184" IDobject="1" Nameobject="VEHICLE" endX="125" endY="252" />
+  <Object beginX="209" beginY="239" IDobject="2" Nameobject="VEHICLE" endX="168" endY="284" />
+ </Image>
+ <Image IDimage="062724" >
+  <Object beginX="159" beginY="183" IDobject="1" Nameobject="VEHICLE" endX="124" endY="251" />
+  <Object beginX="210" beginY="231" IDobject="2" Nameobject="VEHICLE" endX="167" endY="285" />
+ </Image>
+ <Image IDimage="062725" >
+  <Object beginX="160" beginY="182" IDobject="1" Nameobject="VEHICLE" endX="125" endY="249" />
+  <Object beginX="211" beginY="225" IDobject="2" Nameobject="VEHICLE" endX="168" endY="285" />
+ </Image>
+ <Image IDimage="062726" >
+  <Object beginX="160" beginY="182" IDobject="1" Nameobject="VEHICLE" endX="125" endY="249" />
+  <Object beginX="211" beginY="219" IDobject="2" Nameobject="VEHICLE" endX="169" endY="284" />
+ </Image>
+ <Image IDimage="062727" >
+  <Object beginX="159" beginY="182" IDobject="1" Nameobject="VEHICLE" endX="124" endY="249" />
+  <Object beginX="211" beginY="212" IDobject="2" Nameobject="VEHICLE" endX="170" endY="285" />
+ </Image>
+ <Image IDimage="062728" >
+  <Object beginX="159" beginY="181" IDobject="1" Nameobject="VEHICLE" endX="125" endY="247" />
+  <Object beginX="211" beginY="207" IDobject="2" Nameobject="VEHICLE" endX="172" endY="281" />
+ </Image>
+ <Image IDimage="062729" >
+  <Object beginX="159" beginY="180" IDobject="1" Nameobject="VEHICLE" endX="125" endY="247" />
+  <Object beginX="211" beginY="201" IDobject="2" Nameobject="VEHICLE" endX="174" endY="271" />
+ </Image>
+ <Image IDimage="062730" >
+  <Object beginX="159" beginY="180" IDobject="1" Nameobject="VEHICLE" endX="124" endY="246" />
+  <Object beginX="212" beginY="196" IDobject="2" Nameobject="VEHICLE" endX="175" endY="263" />
+ </Image>
+ <Image IDimage="062731" >
+  <Object beginX="159" beginY="180" IDobject="1" Nameobject="VEHICLE" endX="125" endY="245" />
+  <Object beginX="211" beginY="189" IDobject="2" Nameobject="VEHICLE" endX="177" endY="256" />
+ </Image>
+ <Image IDimage="062732" >
+  <Object beginX="159" beginY="179" IDobject="1" Nameobject="VEHICLE" endX="125" endY="245" />
+  <Object beginX="212" beginY="185" IDobject="2" Nameobject="VEHICLE" endX="178" endY="249" />
+ </Image>
+ <Image IDimage="062733" >
+  <Object beginX="159" beginY="179" IDobject="1" Nameobject="VEHICLE" endX="125" endY="245" />
+  <Object beginX="212" beginY="180" IDobject="2" Nameobject="VEHICLE" endX="180" endY="241" />
+ </Image>
+ <Image IDimage="062734" >
+  <Object beginX="161" beginY="179" IDobject="1" Nameobject="VEHICLE" endX="125" endY="243" />
+  <Object beginX="211" beginY="175" IDobject="2" Nameobject="VEHICLE" endX="180" endY="234" />
+ </Image>
+ <Image IDimage="062735" >
+  <Object beginX="161" beginY="179" IDobject="1" Nameobject="VEHICLE" endX="125" endY="243" />
+  <Object beginX="211" beginY="170" IDobject="2" Nameobject="VEHICLE" endX="180" endY="229" />
+ </Image>
+ <Image IDimage="062736" >
+  <Object beginX="160" beginY="178" IDobject="1" Nameobject="VEHICLE" endX="125" endY="244" />
+  <Object beginX="211" beginY="166" IDobject="2" Nameobject="VEHICLE" endX="181" endY="222" />
+ </Image>
+ <Image IDimage="062737" >
+  <Object beginX="160" beginY="178" IDobject="1" Nameobject="VEHICLE" endX="125" endY="244" />
+  <Object beginX="209" beginY="161" IDobject="2" Nameobject="VEHICLE" endX="182" endY="214" />
+ </Image>
+ <Image IDimage="062738" >
+  <Object beginX="160" beginY="177" IDobject="1" Nameobject="VEHICLE" endX="125" endY="243" />
+  <Object beginX="209" beginY="156" IDobject="2" Nameobject="VEHICLE" endX="182" endY="209" />
+ </Image>
+ <Image IDimage="062739" >
+  <Object beginX="161" beginY="177" IDobject="1" Nameobject="VEHICLE" endX="125" endY="242" />
+  <Object beginX="209" beginY="152" IDobject="2" Nameobject="VEHICLE" endX="182" endY="200" />
+ </Image>
+ <Image IDimage="062740" >
+  <Object beginX="161" beginY="176" IDobject="1" Nameobject="VEHICLE" endX="125" endY="242" />
+  <Object beginX="209" beginY="147" IDobject="2" Nameobject="VEHICLE" endX="181" endY="195" />
+ </Image>
+ <Image IDimage="062741" >
+  <Object beginX="161" beginY="176" IDobject="1" Nameobject="VEHICLE" endX="125" endY="242" />
+  <Object beginX="207" beginY="143" IDobject="2" Nameobject="VEHICLE" endX="180" endY="191" />
+ </Image>
+ <Image IDimage="062742" >
+  <Object beginX="161" beginY="176" IDobject="1" Nameobject="VEHICLE" endX="125" endY="241" />
+  <Object beginX="207" beginY="139" IDobject="2" Nameobject="VEHICLE" endX="180" endY="185" />
+ </Image>
+ <Image IDimage="062743" >
+  <Object beginX="161" beginY="176" IDobject="1" Nameobject="VEHICLE" endX="125" endY="241" />
+  <Object beginX="206" beginY="135" IDobject="2" Nameobject="VEHICLE" endX="179" endY="179" />
+ </Image>
+ <Image IDimage="062744" >
+  <Object beginX="161" beginY="175" IDobject="1" Nameobject="VEHICLE" endX="125" endY="241" />
+  <Object beginX="205" beginY="131" IDobject="2" Nameobject="VEHICLE" endX="178" endY="174" />
+ </Image>
+ <Image IDimage="062745" >
+  <Object beginX="161" beginY="175" IDobject="1" Nameobject="VEHICLE" endX="126" endY="240" />
+  <Object beginX="205" beginY="128" IDobject="2" Nameobject="VEHICLE" endX="178" endY="168" />
+ </Image>
+ <Image IDimage="062746" >
+  <Object beginX="161" beginY="175" IDobject="1" Nameobject="VEHICLE" endX="126" endY="239" />
+  <Object beginX="203" beginY="123" IDobject="2" Nameobject="VEHICLE" endX="177" endY="164" />
+ </Image>
+ <Image IDimage="062747" >
+  <Object beginX="161" beginY="174" IDobject="1" Nameobject="VEHICLE" endX="125" endY="239" />
+  <Object beginX="203" beginY="120" IDobject="2" Nameobject="VEHICLE" endX="176" endY="159" />
+ </Image>
+ <Image IDimage="062748" >
+  <Object beginX="161" beginY="175" IDobject="1" Nameobject="VEHICLE" endX="126" endY="238" />
+  <Object beginX="202" beginY="117" IDobject="2" Nameobject="VEHICLE" endX="175" endY="154" />
+ </Image>
+ <Image IDimage="062749" >
+  <Object beginX="161" beginY="174" IDobject="1" Nameobject="VEHICLE" endX="125" endY="237" />
+  <Object beginX="201" beginY="114" IDobject="2" Nameobject="VEHICLE" endX="175" endY="150" />
+ </Image>
+ <Image IDimage="062750" >
+  <Object beginX="162" beginY="173" IDobject="1" Nameobject="VEHICLE" endX="125" endY="237" />
+  <Object beginX="199" beginY="110" IDobject="2" Nameobject="VEHICLE" endX="175" endY="145" />
+ </Image>
+ <Image IDimage="062751" >
+  <Object beginX="162" beginY="173" IDobject="1" Nameobject="VEHICLE" endX="126" endY="237" />
+  <Object beginX="198" beginY="107" IDobject="2" Nameobject="VEHICLE" endX="173" endY="141" />
+ </Image>
+ <Image IDimage="062752" >
+  <Object beginX="163" beginY="172" IDobject="1" Nameobject="VEHICLE" endX="126" endY="236" />
+  <Object beginX="198" beginY="104" IDobject="2" Nameobject="VEHICLE" endX="172" endY="138" />
+ </Image>
+ <Image IDimage="062753" >
+  <Object beginX="162" beginY="172" IDobject="1" Nameobject="VEHICLE" endX="126" endY="236" />
+  <Object beginX="196" beginY="101" IDobject="2" Nameobject="VEHICLE" endX="172" endY="135" />
+ </Image>
+ <Image IDimage="062754" >
+  <Object beginX="163" beginY="171" IDobject="1" Nameobject="VEHICLE" endX="126" endY="235" />
+  <Object beginX="196" beginY="98" IDobject="2" Nameobject="VEHICLE" endX="172" endY="129" />
+ </Image>
+ <Image IDimage="062755" >
+  <Object beginX="163" beginY="171" IDobject="1" Nameobject="VEHICLE" endX="127" endY="234" />
+  <Object beginX="194" beginY="96" IDobject="2" Nameobject="VEHICLE" endX="172" endY="126" />
+ </Image>
+ <Image IDimage="062756" >
+  <Object beginX="163" beginY="170" IDobject="1" Nameobject="VEHICLE" endX="126" endY="233" />
+  <Object beginX="193" beginY="93" IDobject="2" Nameobject="VEHICLE" endX="171" endY="122" />
+ </Image>
+ <Image IDimage="062757" >
+  <Object beginX="163" beginY="170" IDobject="1" Nameobject="VEHICLE" endX="127" endY="232" />
+  <Object beginX="193" beginY="91" IDobject="2" Nameobject="VEHICLE" endX="171" endY="119" />
+ </Image>
+ <Image IDimage="062758" >
+  <Object beginX="164" beginY="169" IDobject="1" Nameobject="VEHICLE" endX="127" endY="231" />
+  <Object beginX="191" beginY="88" IDobject="2" Nameobject="VEHICLE" endX="171" endY="116" />
+ </Image>
+ <Image IDimage="062759" >
+  <Object beginX="163" beginY="168" IDobject="1" Nameobject="VEHICLE" endX="127" endY="229" />
+  <Object beginX="191" beginY="86" IDobject="2" Nameobject="VEHICLE" endX="170" endY="112" />
+ </Image>
+ <Image IDimage="062760" >
+  <Object beginX="164" beginY="167" IDobject="1" Nameobject="VEHICLE" endX="127" endY="229" />
+  <Object beginX="190" beginY="84" IDobject="2" Nameobject="VEHICLE" endX="170" endY="109" />
+ </Image>
+ <Image IDimage="062761" >
+  <Object beginX="164" beginY="166" IDobject="1" Nameobject="VEHICLE" endX="127" endY="227" />
+  <Object beginX="189" beginY="81" IDobject="2" Nameobject="VEHICLE" endX="169" endY="106" />
+ </Image>
+ <Image IDimage="062762" >
+  <Object beginX="165" beginY="165" IDobject="1" Nameobject="VEHICLE" endX="127" endY="226" />
+  <Object beginX="189" beginY="79" IDobject="2" Nameobject="VEHICLE" endX="168" endY="103" />
+ </Image>
+ <Image IDimage="062763" >
+  <Object beginX="165" beginY="164" IDobject="1" Nameobject="VEHICLE" endX="128" endY="224" />
+  <Object beginX="188" beginY="76" IDobject="2" Nameobject="VEHICLE" endX="168" endY="100" />
+ </Image>
+ <Image IDimage="062764" >
+  <Object beginX="165" beginY="163" IDobject="1" Nameobject="VEHICLE" endX="128" endY="222" />
+  <Object beginX="187" beginY="75" IDobject="2" Nameobject="VEHICLE" endX="168" endY="99" />
+ </Image>
+ <Image IDimage="062765" >
+  <Object beginX="165" beginY="162" IDobject="1" Nameobject="VEHICLE" endX="129" endY="221" />
+  <Object beginX="187" beginY="73" IDobject="2" Nameobject="VEHICLE" endX="167" endY="96" />
+ </Image>
+ <Image IDimage="062766" >
+  <Object beginX="165" beginY="160" IDobject="1" Nameobject="VEHICLE" endX="129" endY="219" />
+  <Object beginX="186" beginY="72" IDobject="2" Nameobject="VEHICLE" endX="167" endY="93" />
+ </Image>
+ <Image IDimage="062767" >
+  <Object beginX="166" beginY="160" IDobject="1" Nameobject="VEHICLE" endX="130" endY="218" />
+  <Object beginX="185" beginY="70" IDobject="2" Nameobject="VEHICLE" endX="167" endY="91" />
+ </Image>
+ <Image IDimage="062768" >
+  <Object beginX="166" beginY="157" IDobject="1" Nameobject="VEHICLE" endX="130" endY="215" />
+  <Object beginX="184" beginY="68" IDobject="2" Nameobject="VEHICLE" endX="166" endY="88" />
+ </Image>
+ <Image IDimage="062769" >
+  <Object beginX="166" beginY="156" IDobject="1" Nameobject="VEHICLE" endX="131" endY="212" />
+  <Object beginX="184" beginY="66" IDobject="2" Nameobject="VEHICLE" endX="165" endY="86" />
+ </Image>
+ <Image IDimage="062770" >
+  <Object beginX="166" beginY="154" IDobject="1" Nameobject="VEHICLE" endX="131" endY="209" />
+  <Object beginX="184" beginY="64" IDobject="2" Nameobject="VEHICLE" endX="165" endY="85" />
+ </Image>
+ <Image IDimage="062771" >
+  <Object beginX="167" beginY="152" IDobject="1" Nameobject="VEHICLE" endX="132" endY="208" />
+  <Object beginX="182" beginY="62" IDobject="2" Nameobject="VEHICLE" endX="164" endY="82" />
+ </Image>
+ <Image IDimage="062772" >
+  <Object beginX="168" beginY="150" IDobject="1" Nameobject="VEHICLE" endX="133" endY="205" />
+  <Object beginX="182" beginY="61" IDobject="2" Nameobject="VEHICLE" endX="163" endY="80" />
+ </Image>
+ <Image IDimage="062773" >
+  <Object beginX="168" beginY="148" IDobject="1" Nameobject="VEHICLE" endX="133" endY="201" />
+  <Object beginX="181" beginY="59" IDobject="2" Nameobject="VEHICLE" endX="163" endY="78" />
+ </Image>
+ <Image IDimage="062774" >
+  <Object beginX="169" beginY="146" IDobject="1" Nameobject="VEHICLE" endX="134" endY="199" />
+  <Object beginX="181" beginY="58" IDobject="2" Nameobject="VEHICLE" endX="162" endY="77" />
+ </Image>
+ <Image IDimage="062775" >
+  <Object beginX="168" beginY="145" IDobject="1" Nameobject="VEHICLE" endX="135" endY="195" />
+  <Object beginX="179" beginY="56" IDobject="2" Nameobject="VEHICLE" endX="162" endY="74" />
+ </Image>
+ <Image IDimage="062776" >
+  <Object beginX="168" beginY="143" IDobject="1" Nameobject="VEHICLE" endX="136" endY="192" />
+  <Object beginX="179" beginY="55" IDobject="2" Nameobject="VEHICLE" endX="160" endY="73" />
+ </Image>
+ <Image IDimage="062777" >
+  <Object beginX="169" beginY="140" IDobject="1" Nameobject="VEHICLE" endX="136" endY="190" />
+  <Object beginX="178" beginY="54" IDobject="2" Nameobject="VEHICLE" endX="160" endY="72" />
+ </Image>
+ <Image IDimage="062778" >
+  <Object beginX="169" beginY="138" IDobject="1" Nameobject="VEHICLE" endX="137" endY="187" />
+  <Object beginX="178" beginY="53" IDobject="2" Nameobject="VEHICLE" endX="159" endY="71" />
+ </Image>
+ <Image IDimage="062779" >
+  <Object beginX="169" beginY="136" IDobject="1" Nameobject="VEHICLE" endX="137" endY="184" />
+  <Object beginX="176" beginY="51" IDobject="2" Nameobject="VEHICLE" endX="157" endY="69" />
+ </Image>
+ <Image IDimage="062780" >
+  <Object beginX="170" beginY="133" IDobject="1" Nameobject="VEHICLE" endX="138" endY="180" />
+  <Object beginX="176" beginY="50" IDobject="2" Nameobject="VEHICLE" endX="156" endY="68" />
+ </Image>
+ <Image IDimage="062781" >
+  <Object beginX="170" beginY="132" IDobject="1" Nameobject="VEHICLE" endX="140" endY="177" />
+  <Object beginX="174" beginY="48" IDobject="2" Nameobject="VEHICLE" endX="155" endY="66" />
+ </Image>
+ <Image IDimage="062782" >
+  <Object beginX="170" beginY="130" IDobject="1" Nameobject="VEHICLE" endX="141" endY="174" />
+  <Object beginX="173" beginY="48" IDobject="2" Nameobject="VEHICLE" endX="154" endY="65" />
+ </Image>
+ <Image IDimage="062783" >
+  <Object beginX="170" beginY="127" IDobject="1" Nameobject="VEHICLE" endX="141" endY="171" />
+  <Object beginX="172" beginY="47" IDobject="2" Nameobject="VEHICLE" endX="152" endY="63" />
+ </Image>
+ <Image IDimage="062784" >
+  <Object beginX="171" beginY="125" IDobject="1" Nameobject="VEHICLE" endX="142" endY="168" />
+  <Object beginX="171" beginY="46" IDobject="2" Nameobject="VEHICLE" endX="151" endY="62" />
+ </Image>
+ <Image IDimage="062785" >
+  <Object beginX="170" beginY="122" IDobject="1" Nameobject="VEHICLE" endX="142" endY="165" />
+  <Object beginX="170" beginY="45" IDobject="2" Nameobject="VEHICLE" endX="149" endY="61" />
+ </Image>
+ <Image IDimage="062786" >
+  <Object beginX="170" beginY="120" IDobject="1" Nameobject="VEHICLE" endX="143" endY="162" />
+  <Object beginX="148" beginY="45" IDobject="2" Nameobject="VEHICLE" endX="169" endY="60" />
+ </Image>
+ <Image IDimage="062787" >
+  <Object beginX="171" beginY="118" IDobject="1" Nameobject="VEHICLE" endX="143" endY="159" />
+  <Object beginX="147" beginY="43" IDobject="2" Nameobject="VEHICLE" endX="168" endY="60" />
+ </Image>
+ <Image IDimage="062788" >
+  <Object beginX="171" beginY="116" IDobject="1" Nameobject="VEHICLE" endX="144" endY="156" />
+  <Object beginX="144" beginY="42" IDobject="2" Nameobject="VEHICLE" endX="167" endY="59" />
+ </Image>
+ <Image IDimage="062789" >
+  <Object beginX="170" beginY="113" IDobject="1" Nameobject="VEHICLE" endX="145" endY="154" />
+  <Object beginX="166" beginY="57" IDobject="2" Nameobject="VEHICLE" endX="144" endY="42" />
+ </Image>
+ <Image IDimage="062790" >
+  <Object beginX="171" beginY="111" IDobject="1" Nameobject="VEHICLE" endX="145" endY="150" />
+  <Object beginX="141" beginY="42" IDobject="2" Nameobject="VEHICLE" endX="165" endY="57" />
+ </Image>
+ <Image IDimage="062791" >
+  <Object beginX="171" beginY="109" IDobject="1" Nameobject="VEHICLE" endX="146" endY="147" />
+  <Object beginX="139" beginY="42" IDobject="2" Nameobject="VEHICLE" endX="163" endY="56" />
+ </Image>
+ <Image IDimage="062792" >
+  <Object beginX="171" beginY="107" IDobject="1" Nameobject="VEHICLE" endX="146" endY="144" />
+  <Object beginX="138" beginY="40" IDobject="2" Nameobject="VEHICLE" endX="162" endY="55" />
+ </Image>
+ <Image IDimage="062793" >
+  <Object beginX="171" beginY="106" IDobject="1" Nameobject="VEHICLE" endX="147" endY="141" />
+  <Object beginX="136" beginY="40" IDobject="2" Nameobject="VEHICLE" endX="161" endY="55" />
+ </Image>
+ <Image IDimage="062794" >
+  <Object beginX="171" beginY="104" IDobject="1" Nameobject="VEHICLE" endX="147" endY="139" />
+  <Object beginX="134" beginY="39" IDobject="2" Nameobject="VEHICLE" endX="159" endY="55" />
+ </Image>
+ <Image IDimage="062795" >
+  <Object beginX="171" beginY="101" IDobject="1" Nameobject="VEHICLE" endX="147" endY="136" />
+  <Object beginX="132" beginY="39" IDobject="2" Nameobject="VEHICLE" endX="158" endY="55" />
+ </Image>
+ <Image IDimage="062796" >
+  <Object beginX="169" beginY="100" IDobject="1" Nameobject="VEHICLE" endX="148" endY="134" />
+  <Object beginX="156" beginY="54" IDobject="2" Nameobject="VEHICLE" endX="131" endY="39" />
+ </Image>
+ <Image IDimage="062797" >
+  <Object beginX="169" beginY="98" IDobject="1" Nameobject="VEHICLE" endX="148" endY="130" />
+  <Object beginX="129" beginY="39" IDobject="2" Nameobject="VEHICLE" endX="155" endY="53" />
+ </Image>
+ <Image IDimage="062798" >
+  <Object beginX="170" beginY="97" IDobject="1" Nameobject="VEHICLE" endX="149" endY="129" />
+  <Object beginX="127" beginY="38" IDobject="2" Nameobject="VEHICLE" endX="153" endY="53" />
+ </Image>
+ <Image IDimage="062799" >
+  <Object beginX="170" beginY="95" IDobject="1" Nameobject="VEHICLE" endX="148" endY="125" />
+  <Object beginX="127" beginY="38" IDobject="2" Nameobject="VEHICLE" endX="153" endY="53" />
+ </Image>
+ <Image IDimage="062800" >
+  <Object beginX="170" beginY="93" IDobject="1" Nameobject="VEHICLE" endX="148" endY="124" />
+  <Object beginX="125" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="151" endY="52" />
+ </Image>
+ <Image IDimage="062801" >
+  <Object beginX="149" beginY="92" IDobject="1" Nameobject="VEHICLE" endX="170" endY="121" />
+  <Object beginX="123" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="150" endY="52" />
+ </Image>
+ <Image IDimage="062802" >
+  <Object beginX="149" beginY="89" IDobject="1" Nameobject="VEHICLE" endX="170" endY="119" />
+  <Object beginX="122" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="148" endY="52" />
+ </Image>
+ <Image IDimage="062803" >
+  <Object beginX="149" beginY="88" IDobject="1" Nameobject="VEHICLE" endX="170" endY="118" />
+  <Object beginX="120" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="147" endY="52" />
+ </Image>
+ <Image IDimage="062804" >
+  <Object beginX="149" beginY="86" IDobject="1" Nameobject="VEHICLE" endX="170" endY="115" />
+  <Object beginX="119" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="146" endY="52" />
+ </Image>
+ <Image IDimage="062805" >
+  <Object beginX="149" beginY="85" IDobject="1" Nameobject="VEHICLE" endX="170" endY="113" />
+  <Object beginX="118" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="144" endY="52" />
+ </Image>
+ <Image IDimage="062806" >
+  <Object beginX="149" beginY="83" IDobject="1" Nameobject="VEHICLE" endX="170" endY="111" />
+  <Object beginX="117" beginY="36" IDobject="2" Nameobject="VEHICLE" endX="143" endY="51" />
+ </Image>
+ <Image IDimage="062807" >
+  <Object beginX="150" beginY="82" IDobject="1" Nameobject="VEHICLE" endX="169" endY="108" />
+  <Object beginX="115" beginY="36" IDobject="2" Nameobject="VEHICLE" endX="142" endY="51" />
+ </Image>
+ <Image IDimage="062808" >
+  <Object beginX="150" beginY="81" IDobject="1" Nameobject="VEHICLE" endX="169" endY="105" />
+  <Object beginX="114" beginY="36" IDobject="2" Nameobject="VEHICLE" endX="141" endY="51" />
+ </Image>
+ <Image IDimage="062809" >
+  <Object beginX="150" beginY="79" IDobject="1" Nameobject="VEHICLE" endX="170" endY="104" />
+  <Object beginX="112" beginY="36" IDobject="2" Nameobject="VEHICLE" endX="140" endY="51" />
+ </Image>
+ <Image IDimage="062810" >
+  <Object beginX="150" beginY="78" IDobject="1" Nameobject="VEHICLE" endX="169" endY="103" />
+  <Object beginX="111" beginY="36" IDobject="2" Nameobject="VEHICLE" endX="138" endY="51" />
+ </Image>
+ <Image IDimage="062811" >
+  <Object beginX="150" beginY="76" IDobject="1" Nameobject="VEHICLE" endX="169" endY="100" />
+  <Object beginX="110" beginY="36" IDobject="2" Nameobject="VEHICLE" endX="138" endY="51" />
+ </Image>
+ <Image IDimage="062812" >
+  <Object beginX="151" beginY="74" IDobject="1" Nameobject="VEHICLE" endX="170" endY="99" />
+  <Object beginX="109" beginY="36" IDobject="2" Nameobject="VEHICLE" endX="137" endY="51" />
+ </Image>
+ <Image IDimage="062813" >
+  <Object beginX="151" beginY="74" IDobject="1" Nameobject="VEHICLE" endX="169" endY="96" />
+  <Object beginX="109" beginY="36" IDobject="2" Nameobject="VEHICLE" endX="136" endY="51" />
+ </Image>
+ <Image IDimage="062814" >
+  <Object beginX="151" beginY="71" IDobject="1" Nameobject="VEHICLE" endX="170" endY="95" />
+  <Object beginX="108" beginY="36" IDobject="2" Nameobject="VEHICLE" endX="135" endY="51" />
+ </Image>
+ <Image IDimage="062815" >
+  <Object beginX="151" beginY="71" IDobject="1" Nameobject="VEHICLE" endX="170" endY="95" />
+  <Object beginX="107" beginY="36" IDobject="2" Nameobject="VEHICLE" endX="134" endY="51" />
+ </Image>
+ <Image IDimage="062816" >
+  <Object beginX="151" beginY="70" IDobject="1" Nameobject="VEHICLE" endX="171" endY="92" />
+  <Object beginX="106" beginY="36" IDobject="2" Nameobject="VEHICLE" endX="133" endY="50" />
+ </Image>
+ <Image IDimage="062817" >
+  <Object beginX="152" beginY="68" IDobject="1" Nameobject="VEHICLE" endX="170" endY="91" />
+  <Object beginX="105" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="132" endY="51" />
+ </Image>
+ <Image IDimage="062818" >
+  <Object beginX="152" beginY="66" IDobject="1" Nameobject="VEHICLE" endX="170" endY="89" />
+  <Object beginX="105" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="132" endY="51" />
+ </Image>
+ <Image IDimage="062819" >
+  <Object beginX="153" beginY="66" IDobject="1" Nameobject="VEHICLE" endX="171" endY="87" />
+  <Object beginX="104" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="131" endY="51" />
+ </Image>
+ <Image IDimage="062820" >
+  <Object beginX="153" beginY="65" IDobject="1" Nameobject="VEHICLE" endX="171" endY="85" />
+  <Object beginX="103" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="131" endY="51" />
+ </Image>
+ <Image IDimage="062821" >
+  <Object beginX="153" beginY="63" IDobject="1" Nameobject="VEHICLE" endX="171" endY="84" />
+  <Object beginX="103" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="130" endY="51" />
+ </Image>
+ <Image IDimage="062822" >
+  <Object beginX="153" beginY="62" IDobject="1" Nameobject="VEHICLE" endX="171" endY="84" />
+  <Object beginX="103" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="130" endY="51" />
+ </Image>
+ <Image IDimage="062823" >
+  <Object beginX="154" beginY="60" IDobject="1" Nameobject="VEHICLE" endX="172" endY="81" />
+  <Object beginX="102" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="129" endY="51" />
+ </Image>
+ <Image IDimage="062824" >
+  <Object beginX="154" beginY="59" IDobject="1" Nameobject="VEHICLE" endX="172" endY="80" />
+  <Object beginX="102" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="129" endY="51" />
+ </Image>
+ <Image IDimage="062825" >
+  <Object beginX="155" beginY="58" IDobject="1" Nameobject="VEHICLE" endX="172" endY="79" />
+  <Object beginX="101" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="129" endY="51" />
+ </Image>
+ <Image IDimage="062826" >
+  <Object beginX="156" beginY="57" IDobject="1" Nameobject="VEHICLE" endX="172" endY="77" />
+  <Object beginX="101" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="128" endY="51" />
+ </Image>
+ <Image IDimage="062827" >
+  <Object beginX="156" beginY="56" IDobject="1" Nameobject="VEHICLE" endX="172" endY="76" />
+  <Object beginX="101" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="128" endY="51" />
+ </Image>
+ <Image IDimage="062828" >
+  <Object beginX="156" beginY="55" IDobject="1" Nameobject="VEHICLE" endX="172" endY="75" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="128" endY="51" />
+ </Image>
+ <Image IDimage="062829" >
+  <Object beginX="156" beginY="54" IDobject="1" Nameobject="VEHICLE" endX="172" endY="74" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="128" endY="51" />
+ </Image>
+ <Image IDimage="062830" >
+  <Object beginX="156" beginY="53" IDobject="1" Nameobject="VEHICLE" endX="172" endY="73" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062831" >
+  <Object beginX="156" beginY="53" IDobject="1" Nameobject="VEHICLE" endX="172" endY="71" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062832" >
+  <Object beginX="157" beginY="51" IDobject="1" Nameobject="VEHICLE" endX="172" endY="70" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062833" >
+  <Object beginX="156" beginY="50" IDobject="1" Nameobject="VEHICLE" endX="172" endY="69" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062834" >
+  <Object beginX="156" beginY="49" IDobject="1" Nameobject="VEHICLE" endX="172" endY="68" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062835" >
+  <Object beginX="157" beginY="49" IDobject="1" Nameobject="VEHICLE" endX="172" endY="66" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062836" >
+  <Object beginX="157" beginY="48" IDobject="1" Nameobject="VEHICLE" endX="171" endY="66" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062837" >
+  <Object beginX="155" beginY="47" IDobject="1" Nameobject="VEHICLE" endX="171" endY="64" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062838" >
+  <Object beginX="156" beginY="47" IDobject="1" Nameobject="VEHICLE" endX="171" endY="63" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062839" >
+  <Object beginX="156" beginY="45" IDobject="1" Nameobject="VEHICLE" endX="171" endY="63" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062840" >
+  <Object beginX="155" beginY="44" IDobject="1" Nameobject="VEHICLE" endX="171" endY="62" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062841" >
+  <Object beginX="154" beginY="44" IDobject="1" Nameobject="VEHICLE" endX="170" endY="60" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062842" >
+  <Object beginX="154" beginY="44" IDobject="1" Nameobject="VEHICLE" endX="170" endY="60" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062843" >
+  <Object beginX="153" beginY="43" IDobject="1" Nameobject="VEHICLE" endX="170" endY="59" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062844" >
+  <Object beginX="151" beginY="42" IDobject="1" Nameobject="VEHICLE" endX="169" endY="58" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062845" >
+  <Object beginX="150" beginY="41" IDobject="1" Nameobject="VEHICLE" endX="169" endY="57" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062846" >
+  <Object beginX="150" beginY="41" IDobject="1" Nameobject="VEHICLE" endX="168" endY="56" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062847" >
+  <Object beginX="149" beginY="40" IDobject="1" Nameobject="VEHICLE" endX="167" endY="55" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062848" >
+  <Object beginX="147" beginY="39" IDobject="1" Nameobject="VEHICLE" endX="167" endY="54" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062849" >
+  <Object beginX="146" beginY="39" IDobject="1" Nameobject="VEHICLE" endX="166" endY="54" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062850" >
+  <Object beginX="145" beginY="38" IDobject="1" Nameobject="VEHICLE" endX="165" endY="53" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062851" >
+  <Object beginX="144" beginY="37" IDobject="1" Nameobject="VEHICLE" endX="165" endY="52" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062852" >
+  <Object beginX="142" beginY="36" IDobject="1" Nameobject="VEHICLE" endX="164" endY="52" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062853" >
+  <Object beginX="141" beginY="36" IDobject="1" Nameobject="VEHICLE" endX="163" endY="51" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062854" >
+  <Object beginX="140" beginY="35" IDobject="1" Nameobject="VEHICLE" endX="163" endY="50" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062855" >
+  <Object beginX="139" beginY="35" IDobject="1" Nameobject="VEHICLE" endX="162" endY="50" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062856" >
+  <Object beginX="137" beginY="34" IDobject="1" Nameobject="VEHICLE" endX="161" endY="50" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062857" >
+  <Object beginX="136" beginY="34" IDobject="1" Nameobject="VEHICLE" endX="160" endY="49" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062858" >
+  <Object beginX="134" beginY="34" IDobject="1" Nameobject="VEHICLE" endX="159" endY="49" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062859" >
+  <Object beginX="133" beginY="34" IDobject="1" Nameobject="VEHICLE" endX="157" endY="48" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062860" >
+  <Object beginX="132" beginY="33" IDobject="1" Nameobject="VEHICLE" endX="157" endY="48" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062861" >
+  <Object beginX="130" beginY="33" IDobject="1" Nameobject="VEHICLE" endX="156" endY="47" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062862" >
+  <Object beginX="129" beginY="33" IDobject="1" Nameobject="VEHICLE" endX="155" endY="47" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062863" >
+  <Object beginX="127" beginY="32" IDobject="1" Nameobject="VEHICLE" endX="153" endY="46" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062864" >
+  <Object beginX="126" beginY="32" IDobject="1" Nameobject="VEHICLE" endX="152" endY="46" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062865" >
+  <Object beginX="124" beginY="32" IDobject="1" Nameobject="VEHICLE" endX="151" endY="46" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062866" >
+  <Object beginX="122" beginY="31" IDobject="1" Nameobject="VEHICLE" endX="150" endY="46" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062867" >
+  <Object beginX="121" beginY="31" IDobject="1" Nameobject="VEHICLE" endX="148" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062868" >
+  <Object beginX="119" beginY="31" IDobject="1" Nameobject="VEHICLE" endX="147" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062869" >
+  <Object beginX="117" beginY="31" IDobject="1" Nameobject="VEHICLE" endX="146" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062870" >
+  <Object beginX="116" beginY="31" IDobject="1" Nameobject="VEHICLE" endX="145" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062871" >
+  <Object beginX="115" beginY="31" IDobject="1" Nameobject="VEHICLE" endX="144" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062872" >
+  <Object beginX="114" beginY="31" IDobject="1" Nameobject="VEHICLE" endX="143" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062873" >
+  <Object beginX="113" beginY="31" IDobject="1" Nameobject="VEHICLE" endX="141" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062874" >
+  <Object beginX="112" beginY="31" IDobject="1" Nameobject="VEHICLE" endX="140" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062875" >
+  <Object beginX="111" beginY="31" IDobject="1" Nameobject="VEHICLE" endX="140" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062876" >
+  <Object beginX="110" beginY="31" IDobject="1" Nameobject="VEHICLE" endX="138" endY="44" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062877" >
+  <Object beginX="110" beginY="31" IDobject="1" Nameobject="VEHICLE" endX="138" endY="44" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062878" >
+  <Object beginX="109" beginY="31" IDobject="1" Nameobject="VEHICLE" endX="137" endY="44" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062879" >
+  <Object beginX="108" beginY="31" IDobject="1" Nameobject="VEHICLE" endX="136" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062880" >
+  <Object beginX="107" beginY="31" IDobject="1" Nameobject="VEHICLE" endX="136" endY="44" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062881" >
+  <Object beginX="106" beginY="31" IDobject="1" Nameobject="VEHICLE" endX="135" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062882" >
+  <Object beginX="106" beginY="31" IDobject="1" Nameobject="VEHICLE" endX="135" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062883" >
+  <Object beginX="105" beginY="31" IDobject="1" Nameobject="VEHICLE" endX="134" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062884" >
+  <Object beginX="105" beginY="31" IDobject="1" Nameobject="VEHICLE" endX="134" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062885" >
+  <Object beginX="105" beginY="31" IDobject="1" Nameobject="VEHICLE" endX="134" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062886" >
+  <Object beginX="104" beginY="32" IDobject="1" Nameobject="VEHICLE" endX="133" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062887" >
+  <Object beginX="104" beginY="32" IDobject="1" Nameobject="VEHICLE" endX="133" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062888" >
+  <Object beginX="103" beginY="32" IDobject="1" Nameobject="VEHICLE" endX="132" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062889" >
+  <Object beginX="103" beginY="32" IDobject="1" Nameobject="VEHICLE" endX="132" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062890" >
+  <Object beginX="103" beginY="32" IDobject="1" Nameobject="VEHICLE" endX="132" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062891" >
+  <Object beginX="103" beginY="32" IDobject="1" Nameobject="VEHICLE" endX="132" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062892" >
+  <Object beginX="103" beginY="32" IDobject="1" Nameobject="VEHICLE" endX="132" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062893" >
+  <Object beginX="103" beginY="32" IDobject="1" Nameobject="VEHICLE" endX="131" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062894" >
+  <Object beginX="103" beginY="32" IDobject="1" Nameobject="VEHICLE" endX="131" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062895" >
+  <Object beginX="103" beginY="32" IDobject="1" Nameobject="VEHICLE" endX="131" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062896" >
+  <Object beginX="103" beginY="32" IDobject="1" Nameobject="VEHICLE" endX="131" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062897" >
+  <Object beginX="103" beginY="32" IDobject="1" Nameobject="VEHICLE" endX="131" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062898" >
+  <Object beginX="103" beginY="32" IDobject="1" Nameobject="VEHICLE" endX="131" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+ <Image IDimage="062899" >
+  <Object beginX="103" beginY="32" IDobject="1" Nameobject="VEHICLE" endX="131" endY="45" />
+  <Object beginX="100" beginY="37" IDobject="2" Nameobject="VEHICLE" endX="127" endY="52" />
+ </Image>
+</VideoAnalysis>

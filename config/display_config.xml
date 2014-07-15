@@ -1,0 +1,57 @@
+<!DOCTYPE DISPLAY_PARAMETERS>
+<DISPLAY_PARAMETERS>
+<!--Displays configuration file-->
+
+<!--LearningDisplay options, active "yes" or "no"-->
+<!--Applied to first defined learning context -->
+<LearningDisplay value="yes">
+    <UsedPosition value="2D"/> <!--"2D" or "3D": only contexts with these attributes can be chosen.-->
+    <!-- HighlightedAttribute, can be:  -->
+    <!--    HighlightAttribute: According to position, highlights an attribute -->
+    <!--    Events: According to position, show event transitions, highlighted by probability -->
+    <!--Type value="HighlightAttribute" /-->
+    <!-- HighlightedAttribute, can be:  -->
+    <!--    P: Normalized probability in space -->
+    <!--HighlightedAttribute value="V2D" /-->
+    <HighlightedAttribute value="P" />
+    <!-- PStateThreshold, used to select the groups of siblings on the tree, as:  -->
+    <!--   1. If current state is < PStateThreshold draw it
+           2. Else
+                2.a) If no child is > P, draw it
+                2.b) If at least one child > P,
+                    - Draw those < P
+                    - Recurse to those >= P
+   -->
+    <PStateThreshold value="0.00002" />
+
+    <!-- PFlat, can be:  -->
+    <!--    yes: Shows a state as a disc of radius s.d. and center at mean of position, coloured with peak probability value  -->
+    <!--    no: Shows a state as a disc of radius s.d. and center at mean of position, coloured as a gaussian  -->
+    <PFlat value="no" />
+
+    <!-- ShowRecognised, can be: -->
+    <!--    yes: Shows recognised states and events -->
+    <ShowRecognised value="no" />
+
+    <!-- PEventThreshold, used to recursively select the events from the
+         frequent states, assuming that frequent states generate frequent
+         events. The most likely event from a frequent state is always
+         shown, and subsequent events from arriving states are also shown
+         until Pstarting_state * Pevent1 * ... *PeventK > PEventThreshold.
+         Then, PEventThreshold >= PStateThreshold => just to show most likely
+         event from starting state.
+    -->
+    <PEventThreshold value="0.05" />
+
+    <!-- TransparencyLevel, used to set transparency of added learning visual information. Value in [0;255]. -->
+    <TransparencyLevel value="200" />
+
+    <!-- TransparentProbability, stablishes the normalised probability threshold for considering low probabilities transparent. -->
+    <TransparentProbability value="0.05" />
+
+    <!-- Activates Events Visualization: "yes" or "no" -->
+    <ShowEvents value="no" />
+
+</LearningDisplay>
+
+</DISPLAY_PARAMETERS>

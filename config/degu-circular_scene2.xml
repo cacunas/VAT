@@ -1,0 +1,63 @@
+<!DOCTYPE SceneXML>
+<scene>
+<homography_matrix
+ 	h00="0.14309125"	h01="-6.1293713e-21"	h02="-89.861305"
+ 	h10="5.3936919e-21"	h11="-0.14164804"	h12="50.993295"
+ 	h20="-4.1475725e-05"	h21="3.6580556e-05"	h22="1"
+ />
+<!--Image scene defitions-->
+<!--Zone2DList>
+    <Zone2D id = "1" name = "Object1" type="Polygon">
+        <OutlineList>
+            <Point X = "100"    Y = "50" />
+            <Point X = "140"  Y = "50" />
+            <Point X = "140"  Y = "200" />
+        </OutlineList>
+    </Zone2D>
+    <Zone2D id = "2" name = "Object2">
+        <OutlineList>
+        <Point X = "300"    Y = "150" />
+        <Point X = "340"  Y = "150" />
+        <Point X = "340"  Y = "300" />
+        </OutlineList>
+    </Zone2D>
+    <Zone2D id = "3" name = "Ellipse1" type="Ellipse">
+        <Center X = "100"    Y = "200" />
+        <Radius RX = "30"      RY = "40" />
+    </Zone2D>
+</Zone2DList>
+<Area2DList-->
+    <!--Area2D name = "TestArea3D">
+        <AreaZonesList>
+            <AreaZone2D zone_name = "Zone1" />
+            <AreaZone2D zone_name = "Zone2" />
+        </AreaZonesList>
+    </Area2D>
+</Area2DList-->
+
+<!--Homography transform scene defitions-->
+<ZoneHomographyList>
+    <ZoneHomography id = "1" name = "ZoI" type="Ellipse">
+        <Center X = "0"    Y = "0" />
+        <Radius RX = "50"      RY = "50" />
+    </ZoneHomography>
+    <ZoneHomography id = "2" name = "InsideZone" type="Ellipse">
+        <Center X = "0"    Y = "0" />
+        <Radius RX = "35"      RY = "35" />
+    </ZoneHomography>
+    <ZoneHomography id = "3" name = "InBackZone" type="Ellipse">
+        <Center X = "0"    Y = "0" />
+        <Radius RX = "75"      RY = "75" />
+    </ZoneHomography>
+
+</ZoneHomographyList>
+
+<AreaHomographyList>
+    <!--AreaHomography name = "TestArea3D">
+        <AreaZonesList>
+            <AreaZoneHomography zone_name = "Zone1" />
+        </AreaZonesList>
+    </AreaHomography-->
+</AreaHomographyList>
+
+</scene>

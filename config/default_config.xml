@@ -1,0 +1,707 @@
+<!DOCTYPE MODULE_PARAMETERS>
+<MODULE_PARAMETERS>
+
+
+<!--Overrides application parameters, as defined in config/app_config.xml-->
+<GeneralApplicationParameters>
+    <!-- Configuration File for Module Sequence: -->
+    <ModuleSequenceFile value="config/default_module_sequence.txt"/>
+
+    <!-- Configuration File for Views: -->
+    <ViewConfigFile value="config/view_config.xml"/>
+
+    <!--Activates Time Stats on executed modules-->
+    <ActivateTimeStats value="yes">
+        <OutputToFile value="yes"> <!--If answer is 'no': standard output-->
+            <!--Output file format: OutputFileNamePrefixDATE-TIME.txt -->
+            <OutputFileNamePrefix value="VAT-TimeStats-" />
+        </OutputToFile>
+        <!--Register time each AtStep frames -->
+        <AtStep value="1" />
+        <!--Register time at frame AtFrame (ignored if <0) -->
+        <AtFrame value="-1" />
+    </ActivateTimeStats>
+
+</GeneralApplicationParameters>
+
+<!--Archivo de configuracion por defecto-->
+<!--AcquisitionModule-->
+<AcquisitionModule>
+    <startFrame value="200" /> <!-- New degu video, bad illumination first -->
+    <!--startFrame value="145" /--> <!-- Degu chico -->
+    <!--startFrame value="100" /--> <!-- Degu circular -->
+    <!--startFrame value="100" /--> <!-- Degu circular -->
+    <!--startFrame value="0" /--> <!-- Personality -->
+    <!--startFrame value="820" /--> <!-- First degu video-->
+    <subDirectories value="no" />
+    <!--<subDirectories value="no" />-->
+    <!--<videoDirectory value="/home/mzuniga/SECUENCIA-TEST" />-->
+    <!--videoDirectory value="/home/mzuniga/VIDEOS/DEGU2" /-->
+    <!--videoDirectory value="/home/mzuniga/VIDEOS/PRUEBA" /-->
+<!--    <videoDirectory value="/home/mzuniga/VIDEOS/HAMSTER-DIRS/0000" />-->
+    <!--videoDirectory value="/home/mzuniga/VIDEOS/DEGUS/CIRCULAR1" /-->
+<!--    <videoDirectory value="/home/mzuniga/VIDEOS/DEGUS/CIRCULAR2" />-->
+    <videoDirectory value="/media/extra-ext4/VIDEOS/DEGUS/LBJ/hembras/dia1/303LBD1" />-->
+
+    <!--videoDirectory value="/home/mzuniga/VIDEOS/PERSO-JPG" /-->
+
+    <!--<videoDirectory value="/VAT-DATA/VIDEOS/FOOTBALL"/>-->
+
+    <!--videoDirectory value="/home/mzuniga/VIDEOS/FOOTBALL" /-->
+    <!--Last resource if VAT is not able to recover a proper milliseconds difference from image timestamps (maybe unexisting timestamp). -->
+    <defaultMillisecs value="40" />
+	<!--store currentImage in previousImage /-->
+    <saveCurrent value="yes" />
+</AcquisitionModule>
+
+<AcquisitionCameraModule>
+    <!--mediaType value="LocalCamera">
+        <deviceID value="0" />
+    </mediaType-->
+    <mediaType value="RemoteCamera" >
+        <!--url value="rtsp://VAT_Visor:visor@200.1.17.81:554/mpeg4/media.amp"/-->
+        <user        value="Visor" />
+        <password    value="visor" />
+        <server_IP   value="200.1.17.81" />
+        <server_Port value="554" />
+        <protocol    value="rtsp" />
+        <metafile    value="/mpeg4/media.amp" />
+    </mediaType>
+</AcquisitionCameraModule>
+
+<ETISEOAcquisitionModule>
+    <startFrame value="0" />
+    <subDirectories value="no" />
+    <videoDirectory value="/home/mzuniga/ETISEO/ETISEO_SEQUENCES/ETI-VS2-AP-11/ETI-VS2-AP-11-C4" />
+    <defaultMillisecs value="80" />
+</ETISEOAcquisitionModule>
+
+<!--ContextModule -->
+<ContextModule>
+    <!-- Configuration files -->
+    <!--SceneModelFileName value="config/degu-chico_scene-official.xml" /-->
+    <!--SceneModelFileName value="config/degu-chico_scene.xml" /-->
+    <SceneModelFileName value="config/degu-circular_scene.xml" />
+    <!--SceneModelFileName value="config/default_scene.xml" /-->
+    <ObjectModelsFileName value="config/parallelpiped-models.xml" />
+    <!-- Parameter for contextualizing magnitudes. Defaults to 100[cm]-->
+    <OneMeterRepresentation value="100" />
+    <!-- Parameter to be used to build a default velocity model in case an object velocity model is required and it has not been provided. Units u/s, where u is the unit of parameter OneMeterRepresentation and s is second. Defaults to 5000[cm/s] -->
+    <MaximalObjectSpeed value="5000" />
+</ContextModule>
+
+<!--FakeSegmentationModule -->
+<FakeSegmentationModule>
+    <!-- Ground-truth file -->
+    <fileName value="config/parking.xml" />
+</FakeSegmentationModule>
+
+<!--FakeTrackingModule -->
+<FakeTrackingModule>
+    <!-- Ground-truth file -->
+    <fileName value="parking.xml" />
+    <!--Position considered from a blob for an object. Values:-->
+    <!--    MiddleCenter : Position at center-middle of blob-->
+    <!--    Left         : Position at left-middle of blob-->
+    <!--    Right        : Position at right-middle of blob-->
+    <!--    Top          : Position at center-top of blob-->
+    <!--    Bottom       : Position at center-bottom of blob-->
+    <!--    TopLeft      : Position at left-top of blob-->
+    <!--    BottomLeft   : Position at left-bottom of blob-->
+    <!--    TopRight     : Position at right-top of blob-->
+    <!--    BottomRight  : Position at right-top of blob-->
+    <objectPosition value="Bottom" />
+</FakeTrackingModule>
+
+
+<!-- BackgroundInitializationModule -->
+<BackgroundInitializationModule>
+    <sizeBlock value="8"/>
+    <thresholdStill value="4"/>
+    <aggregationRate value="0.98"/>
+    <thresholdMov value="0.9"/>
+    <thresholdCorrelation value="0.75"/>
+</BackgroundInitializationModule>
+
+<!-- segmentationModule -->
+<segmentationModule>
+    <!-- Configuration file -->
+	<!--Differencing threshold per RGB channel: -->
+    <!--Threshold value="25" /-->
+        <Threshold value="10" />
+    <!--Threshold value="30" /-->
+
+    <!--BG updating method: FG incorporated at alpha rate -->
+    <UpdateBG value="false">
+<!--	<UpdateBG value="true" >-->
+        <Alpha value="0.07" />
+    </UpdateBG>
+    <!--BG updating method: BG change determined by N samples determined using a
+        box filter of size K, inside 'InZone' and outside 'OutZone' -->
+    <!-- ZoneList, in InZone and OutZone makes reference to defined context lists
+         of zones where ZoneName belongs. The value can then be:
+        "ZoneHomographyList"
+        "ZoneList"
+        "Zone2DList"
+    -->
+    <GlobalUpdateBG value="true" >
+        <N value="800" />
+        <K value="4" />
+        <InZone value="false">
+            <ZoneName value="ZoI" />
+            <ZoneList value="ZoneHomographyList" />
+        </InZone>
+        <OutZone value="false">
+            <ZoneName value="ZoI" />
+            <ZoneList value="ZoneHomographyList" />
+        </OutZone>
+    </GlobalUpdateBG>
+
+    <!--InitialBG Options: -->
+    <!--first: the first image is taken as background.  -->
+    <!--defined: a provided image is taken as background (must be defined).  -->
+    <!--InitialBG value="first" /-->
+    <InitialBG value="defined">
+		<!--BGImage value="/home/mzuniga/ETISEO/ETISEO_CONFIG/bg-AP-11-C4.jpg" /-->
+        <!--BGImage value="/home/mzuniga/VIDEOS/degu-bg.jpg" /-->
+        <!--BGImage value="/home/mzuniga/VIDEOS/hamster-bg.jpg" /-->
+<!--        <BGImage value="/home/mzuniga/VIDEOS/DEGUS/CIRCULAR2-bg.jpg" />-->
+        <!--BGImage value="/home/mzuniga/VIDEOS/DEGUS/CIRCULAR1-bg.jpg" /-->
+    </InitialBG>
+    <!--Mask Options: -->
+    <!--yes: a provided image is taken as mask (must be defined).  -->
+    <!--no:  no image is considered. -->
+    <Mask value="no">
+        <MaskImage value="/home/mzuniga/VIDEOS/DEGUS/degu-circular-mask1.pgm" />
+    </Mask>
+
+    <!-- Activates morphological aperture if true: -->
+    <Aperture value = "false"/>
+</segmentationModule>
+
+<!-- regionalSegmentationModule: Compares each blob CrCb histogram against histogram of pixels
+     near the moving region to complete the region using regional information. Then,
+     associates a convex hull to the region, calculates the principal axis, and the
+     distance function to borders w/r to the axis.-->
+<regionalSegmentationModule>
+
+    <!-- Bin size for color histograms. -->
+    <ColorHistogramBinSize value="32"/>
+
+    <!-- Window allowed to check for a movement pixel, to perform histogram comparison on
+         regional segmentation. -->
+    <SearchWindowSize value="7"/>
+
+    <!-- Offset for considering points around the convex hull as part of the region for color
+         histogram determination -->
+    <ConvexHullOffset value="1"/>
+
+    <!-- Step (in pixels) to get normal distance measures from principal axis to region borders-->
+    <PrincipalAxisStep value="2"/>
+</regionalSegmentationModule>
+
+<ConnectedComponentsRLEModule>
+    <!-- RLE vertical step for building runs -->
+    <Step value="1" />
+    <!-- Tolerance of non foreground pixels distance to consider a foreground pixel as part of the run -->
+    <Tolerance value="0" />
+</ConnectedComponentsRLEModule>
+
+<!-- BlobFilteringModule: eliminates blobs according to different criterias -->
+<BlobFilteringModule>
+    <!-- Minimal blob height -->
+	<MinHeight value="8" />
+    <!-- Minimal blob width -->
+	<MinWidth value="8" />
+    <!-- Minimal blob area -->
+	<MinArea value="64" />
+    <!-- Rate of pixels to horizontally and vertically ignore from image borders -->
+    <IgnoreBorderRate value="0.05" />
+    <!--IgnoreBorderRate value="0" /-->
+</BlobFilteringModule>
+
+<!-- ObjectFilteringModule: eliminates mobile objects according to different criterias -->
+<ObjectFilteringModule>
+    <MinObjects value="0" />
+    <!-- Minimal blob height -->
+    <MinHeight value="10" />
+    <!-- Minimal blob width -->
+    <MinWidth value="10" />
+    <!-- Minimal blob area -->
+    <MinArea value="100" />
+    <!-- Minimal number of frames -->
+    <MinNumFrames value="3" />
+    <!-- Minimal number of frames for checking reliability-->
+    <MinNumFramesReliability value="8" />
+    <!-- Minimal Reliability when checked -->
+    <MinReliability value="0.01" />
+    <!-- Maximal number of objects (priorized by elderness, after filtering with
+         the other criteria). Value 0 disables the criterium. -->
+    <MaxObjects value="3" />
+    <FilterById value="false">
+        <Id value="2"/>
+        <Id value="1"/>
+    </FilterById>
+
+</ObjectFilteringModule>
+
+
+<!--ReliabilityTrackingModule -->
+<ReliabilityTrackingModule>
+
+    <Classification>
+        <!--RCProbability RCReliabilityProbability RCDimensionalProbability-->
+        <IntraCriteria value="RCProbability">
+            <Threshold value="0.40" />  <!--0.000001-->
+            <TopListSize value="10" />
+        </IntraCriteria>
+        <InterCriteria value="RCProbability" >
+            <Threshold value="0.40" />
+        </InterCriteria>
+        <HStepCM value="3.0" />  <!--default value 5.0[cm]-->
+
+        <!-- <AlphaStepRadians value="3.14159/30.0" />  commented because i prefer default value precision (PI/30) -->
+        <Dim2DStep value="4" />
+  
+        <OrderedByDensity value="true">
+            <DensityMaxPixels value="400" />
+            <DensityMinPixels value="200" />
+            <PixelDensity value="0.01" />
+        </OrderedByDensity >
+        <HToleranceCoeff value="0.03" />
+        <VToleranceCoeff value="0.03" />
+        <BorderOcclusionTreatment value="false" />
+        <ContextObjectOcclusionTreatment value="true" >
+            <ProximityPixels value="5" />
+            <MaxRoofAndBaseIntersectionRatio value="0.9999"/>
+            <MaxBaseAndBaseIntersectionRatio value="0.9999"/>
+        </ContextObjectOcclusionTreatment>
+        <WallCoherenceTreatment value="false" >
+            <MaxCuttingAreaRateOfWall value="0.2" />
+            <MaxLengthRateOfWallInBase value="0.2" />
+        </WallCoherenceTreatment>
+        <MinPixelCoverageRatio value="0.01" />
+    </Classification>
+
+    <Merge>
+        <MaxDistance value="10" />
+        <Threshold value="0.40" />
+        <OverlapingRatio value="0.80" />
+        <Criteria value="RCProbability" />
+    </Merge>
+
+    <!--PreMerge: if true, activates preMerge in Tracking andsearches for Merge Parameters, else takes default set for default set see: ReliabilityMerge.cpp -->
+    <PreMerge value="true" >
+        <MaxDistance value="10" />
+        <Threshold value="0.40" />
+        <OverlapingRatio value="0.95" />
+        <Criteria value="RCProbability" />
+        <EliminateOverlapedClassifiedBlobs value="true" >
+            <OverlapingRatio value="0.95" />
+            <Probability value="0.95" />
+            <Reliability value="0.90" />
+        </EliminateOverlapedClassifiedBlobs>
+    </PreMerge>
+
+    <!--Mobile's blob history buffer size-->
+    <BlobBufferSize value="4" />
+    <!--Maximum number of trajectory points stored for a mobile (0 means no limit).-->
+    <TrajectoryMaxSize value="0" />
+    <!--Number of alternative solutions retained per related alternatives set. This number is used in the generation of the best alternatives for a related alternatives set.-->
+    <MaximumRetainedAlternativeSolutions value="4" />
+    <!--Maximal number of alternatives generated in the updating phase, determined as: reliabilityTrackingMaximalNumberOfPathAlternativesPerMobile * numberOfMobilesInAlternative-->
+    <MaximalNumberOfPathAlternativesPerMobile value="3" />
+    <!--Maximal number of paths generated for a mobile in the path updating phase-->
+    <MaximumAlternativeMobilePaths value="3" />
+    <!--Number of frames of mobile lifetime just analyzing 2D information.-->
+    <_2DLevelFrames value="3" /> <!--1000000-->
+    <!--Hypothesis elimination strategy. Possible values:-->
+    <!--MaximumLikelihoodEstimator: Elimination by reliability lower than a s.d. -->
+    <!--LeastReliable: Elimination by lowest reliability measure-->
+    <!--None: No elimination is done.-->
+    <EliminationStrategy value="LeastReliable" />
+    <!--Constant for cooling function with respect to time difference of a blob with current time. Function scale is seconds. function = exp(-t*lambda)-->
+    <CoolingFunctionLambda value="6.0" /> <!--10.0-->
+    <!--Thresholds to determine if 2D or 3D mobile information is usable for generating the estimated next frame mobile attributes. They are also used to validate the 3D mobile information of the different possibilities generated as the initial 3D information for a mobile (using the information from all the blob history buffer), after the period of pure 2D Tracking. Also, both thresholds are used to determine which information to use in the determination of the research area of the blobs that can correspond to the visual evidence for existing mobiles in current frame.-->
+    <SpatialCoherenceReliabilityThreshold value="0.10" />
+    <SpatialCoherenceProbabilityThreshold value="0.40" />
+    <!--Thresholds to determine if 2D or 3D mobile information is usable for generating the estimated next frame mobile attributes. They are also used to validate the 3D mobile information of the different possibilities generated as the initial 3D information for a mobile (using the information from all the blob history buffer), after the period of pure 2D Tracking.-->
+    <DimensionalCoherenceReliabilityThreshold value="0.10" />
+    <DimensionalCoherenceProbabilityThreshold value="0.50" />
+    <!--Threshold used to check if a mobile can be considered as an object of defined type. A mobile is tagged as unknown if: -->
+    <!--    numberOfFramesSinceFirstTimeSeen*(1 - reliabilityTrackingKnownSolutionThreshold) - unknownFramesNumber < 0 -->
+    <KnownSolutionThreshold value="0.50" />
+    <!--Probability for an alternative to not be eliminated. This probability is relative to the best alternative in a set of alternatives. So, an alternative will be erased if:-->
+    <!--    Palternative/Pbest < reliabilityTrackingAlternativeSolutionsProbabilityThreshold-->
+    <AlternativeSolutionsProbabilityThreshold value="0.3" />
+    <!--Thresholds for not considering alternatives which contain very bad mobiles according to different coherence criteria -->
+    <IgnoreByDimensionalCoherenceThreshold value="0.10" /><!--0.25-->
+    <IgnoreByVelocityCoherenceThreshold value="0.10" /><!--0.25-->
+    <!--Rate for immediate elimination of a mobile path, given the best calculated new mobile path for an existing mobile. The new mobile path is eliminated if:-->
+    <!--		Pmobile < Pbest * ImportanceRateForBestMobileAlternativeProbability -->
+    <ImportanceRateForBestMobileAlternativeProbability value="0.95" />
+    <!--Probability required for a mobile to pass to 'ensure' mode, which is the mode where it is considered that type is already determined for mobile so it won't be searched another type anymore.-->
+    <ProbabilityToEnsureMode value="0.9" />
+    <!--Maximum accepted rate of 3D base overlapping between two mobiles, to be considered as part of a valid alternative.-->
+    <Maximal3DBaseOverlapping value="0.30" />
+    <!--One of the criterias to consider two mobiles equal. Used for filtering objects with different id, which converged to same mobile, with the same visual evidence. -->
+    <Mobile2DCoverageRateToConsiderEqual value="0.95" />
+    <!--Threshold for determining when to consider a bounding box highly covered by another one. Used as one of the two criteria to determine if a mobile is in a special case: -->
+    <!-- - PART_OF_BIGGER : The visual evidence shows that a mobile is validated by its estimated information but, as evidence is bigger than expected, no precise information can be added from this last frame (blob considerably bigger than estimated 2D bounding box for mobile). -->
+    <!-- - PARTIALLY_DETECTED : The visual evidence shows that a mobile is partially validated by its estimated information but, as evidence is little than expected, no precise information can be added from this last frame (blob considerably little than estimated 2D bounding box for mobile).-->
+    <!-- - LOST : The visual evidence does not exist or is too partial. No information is added and reliability on data is decreased.-->
+    <HighVisualSupportThreshold value="0.95" />
+    <!--Threshold for determining when to consider a bounding box by lowly covered by another one. Used as one of the two criteria to determine if a mobile is in a special case. -->
+    <LowVisualSupportThreshold value="0.05" />
+    <!--Threshold for determining when to consider a bounding box immediately validating the estimated values for a mobile.-->
+    <BlobCompletellySupportedThreshold value="0.95" />
+    <!--Flag for activation of complete output-->
+    <InternalOutputActivated value="false" />
+    <!--Flag for activation of reduced output-->
+    <ReducedOutputActivated value="false" />
+    <!--Maximal rotation speed allowed for a mobile to be considered as valid. Default value: Twice the empirical maximal rotation speed of a person 1.755[rad/sec]-->
+    <MaximalAlphaRotationSpeed value="10" /> <!--19.6349540849362077417350480601 (PI/2)[rad]/0.080[sec] -->
+    <!--Limit for 3D dimension change speed. An upgrade could be to integrate this value to each postural model or each posture transition -->
+    <Maximal3DDimensionChangeSpeed value="244" /> <!-- [u/s] -> (in my case) [cm/s] -->
+    <!--Accepted extra pixel variation accepted for a 2D dimension, covering segmentation errors in dimensions estimation. Used for validating a new mobile representing a path for an existing mobile. -->
+    <AcceptedPixelError value="2" />
+    <!--Accepted extra dimensional or positional 3D variation for a 3D dimension, covering errors in dimensions estimation. Used for validating a new mobile representing a path for an existing mobile. -->
+    <Accepted3DFeatureError value="10.0" /> <!--[cm]-->
+    <!--Accepted extra angle variation for the 3D orientation of the mobile, covering errors in orientation estimation. Used for validating a new mobile representing a path for an existing mobile. -->
+    <AcceptedOrientationError value="0.1745329252" /> <!--10[deg]-->
+    <!--Rough estimation for maximal speed of expected objects in the scene, utilised if no other more precise speed can be deduced from 3D models.-->
+    <MaxObjectSpeed value="400.0" /> <!--[cm/sec]-->
+    <!--Probably implemented later, but it can bias results on tracking. If true, mergeable reduced unknown blobs will be merged, if no other combination of blobs results in a merge of type different than unknown.-->
+    <!--  <PreMergeReducedUnknownBlobs value="true" /> -->
+
+</ReliabilityTrackingModule>
+
+<!--ReliabilityTracking2DModule -->
+<ReliabilityTracking2DModule>
+    <Merge>
+        <MaxDistance value="10" />
+        <Threshold value="0.40" />
+        <OverlapingRatio value="0.80" />
+        <Criteria value="RCProbability" />
+    </Merge>
+
+    <!--PreMerge: if true, activates preMerge in Tracking andsearches for Merge Parameters, else takes default set for default set see: ReliabilityMerge.cpp -->
+    <PreMerge value="true" >
+        <MaxDistance value="10" />
+        <Threshold value="0.40" />
+        <OverlapingRatio value="0.95" />
+        <Criteria value="None" />
+        <EliminateOverlapedClassifiedBlobs value="true" >
+            <OverlapingRatio value="0.95" />
+            <Probability value="0.95" />
+            <Reliability value="0.90" />
+        </EliminateOverlapedClassifiedBlobs>
+    </PreMerge>
+
+    <!--Mobile's blob history buffer size-->
+    <BlobBufferSize value="4" />
+    <!--Maximum number of trajectory points stored for a mobile (0 means no limit).-->
+    <TrajectoryMaxSize value="0" />
+    <!--Number of alternative solutions retained per related alternatives set. This number is used in the generation of the best alternatives for a related alternatives set.-->
+    <MaximumRetainedAlternativeSolutions value="5" />
+    <!--Maximal number of alternatives generated in the updating phase, determined as: reliabilityTrackingMaximalNumberOfPathAlternativesPerMobile * numberOfMobilesInAlternative-->
+    <MaximalNumberOfPathAlternativesPerMobile value="5" />
+    <!--Maximal number of paths generated for a mobile in the path updating phase-->
+    <MaximumAlternativeMobilePaths value="5" />
+    <!--Number of frames of mobile lifetime just analyzing 2D information.-->
+    <_2DLevelFrames value="5" /> <!--1000000-->
+    <!--Hypothesis elimination strategy. Possible values:-->
+    <!--MaximumLikelihoodEstimator: Elimination by reliability lower than a s.d. -->
+    <!--LeastReliable: Elimination by lowest reliability measure-->
+    <!--None: No elimination is done.-->
+    <EliminationStrategy value="LeastReliable" />
+    <!--Constant for cooling function with respect to time difference of a blob with current time. Function scale is seconds. function = exp(-t*lambda)-->
+    <CoolingFunctionLambda value="6.0" /> <!--10.0-->
+    <!--Thresholds to determine if 2D or 3D mobile information is usable for generating the estimated next frame mobile attributes. They are also used to validate the 3D mobile information of the different possibilities generated as the initial 3D information for a mobile (using the information from all the blob history buffer), after the period of pure 2D Tracking. Also, both thresholds are used to determine which information to use in the determination of the research area of the blobs that can correspond to the visual evidence for existing mobiles in current frame.-->
+    <SpatialCoherenceReliabilityThreshold value="0.10" />
+    <SpatialCoherenceProbabilityThreshold value="0.40" />
+    <!--Thresholds to determine if 2D or 3D mobile information is usable for generating the estimated next frame mobile attributes. They are also used to validate the 3D mobile information of the different possibilities generated as the initial 3D information for a mobile (using the information from all the blob history buffer), after the period of pure 2D Tracking.-->
+    <DimensionalCoherenceReliabilityThreshold value="0.25" />
+    <DimensionalCoherenceProbabilityThreshold value="0.50" />
+    <!--Threshold used to check if a mobile can be considered as an object of defined type. A mobile is tagged as unknown if: -->
+    <!--    numberOfFramesSinceFirstTimeSeen*(1 - reliabilityTrackingKnownSolutionThreshold) - unknownFramesNumber < 0 -->
+    <KnownSolutionThreshold value="0.50" />
+    <!--Probability for an alternative to not be eliminated. This probability is relative to the best alternative in a set of alternatives. So, an alternative will be erased if:-->
+    <!--    Palternative/Pbest < reliabilityTrackingAlternativeSolutionsProbabilityThreshold-->
+    <AlternativeSolutionsProbabilityThreshold value="0.3" />
+    <!--Thresholds for not considering alternatives which contain very bad mobiles according to different coherence criteria -->
+    <IgnoreByDimensionalCoherenceThreshold value="0.10" /><!--0.25-->
+    <IgnoreByVelocityCoherenceThreshold value="0.10" /><!--0.25-->
+    <!--Rate for immediate elimination of a mobile path, given the best calculated new mobile path for an existing mobile. The new mobile path is eliminated if:-->
+    <!--		Pmobile < Pbest * ImportanceRateForBestMobileAlternativeProbability -->
+    <ImportanceRateForBestMobileAlternativeProbability value="0.95" />
+    <!--Probability required for a mobile to pass to 'ensure' mode, which is the mode where it is considered that type is already determined for mobile so it won't be searched another type anymore.-->
+    <ProbabilityToEnsureMode value="0.9" />
+    <!--Maximum accepted rate of 3D base overlapping between two mobiles, to be considered as part of a valid alternative.-->
+    <Maximal3DBaseOverlapping value="0.30" />
+    <!--One of the criterias to consider two mobiles equal. Used for filtering objects with different id, which converged to same mobile, with the same visual evidence. -->
+    <Mobile2DCoverageRateToConsiderEqual value="0.95" />
+    <!--Threshold for determining when to consider a bounding box highly covered by another one. Used as one of the two criteria to determine if a mobile is in a special case: -->
+    <!-- - PART_OF_BIGGER : The visual evidence shows that a mobile is validated by its estimated information but, as evidence is bigger than expected, no precise information can be added from this last frame (blob considerably bigger than estimated 2D bounding box for mobile). -->
+    <!-- - PARTIALLY_DETECTED : The visual evidence shows that a mobile is partially validated by its estimated information but, as evidence is little than expected, no precise information can be added from this last frame (blob considerably little than estimated 2D bounding box for mobile).-->
+    <!-- - LOST : The visual evidence does not exist or is too partial. No information is added and reliability on data is decreased.-->
+    <HighVisualSupportThreshold value="0.95" />
+    <!--Threshold for determining when to consider a bounding box by lowly covered by another one. Used as one of the two criteria to determine if a mobile is in a special case. -->
+    <LowVisualSupportThreshold value="0.05" />
+    <!--Threshold for determining when to consider a bounding box immediately validating the estimated values for a mobile.-->
+    <BlobCompletellySupportedThreshold value="0.95" />
+    <!--Flag for activation of complete output-->
+    <InternalOutputActivated value="false" />
+    <!--Flag for activation of reduced output-->
+    <ReducedOutputActivated value="false" />
+    <!--Last resource if VAT is not able to recover a proper milliseconds difference from image timestamps. -->
+    <MeanMillisecondsDifferenceBetweenFrames value="40" />
+    <!--Accepted extra pixel variation accepted for a 2D dimension, covering segmentation errors in dimensions estimation. Used for validating a new mobile representing a path for an existing mobile. -->
+    <AcceptedPixelError value="2" />
+    <!--Rough estimation for maximal speed of expected objects in the scene, utilised if no other more precise speed can be deduced from 3D models.-->
+    <MaxObjectSpeed value="400.0" /> <!--[cm/sec]-->
+    <!--Probably implemented later, but it can bias results on tracking. If true, mergeable reduced unknown blobs will be merged, if no other combination of blobs results in a merge of type different than unknown.-->
+    <!--  <PreMergeReducedUnknownBlobs value="true" /> -->
+</ReliabilityTracking2DModule>
+
+
+<!-- ReliabilityTrackingMultiModelModule: Tracker using a hierarchy of models, for properly coping with any issue on computer vision  -->
+
+<ReliabilityMultiModelTrackingModule>
+
+    <ActivatePauseCriteria value="yes">
+        <ActivatePauseOnNew value="yes"/>
+        <ActivatePauseOnLost value="yes"/>
+    </ActivatePauseCriteria>
+
+    <MultiModelConfig value="/home/mzuniga/PROJECTS/VAT/vat-3-0/VAT-3.0/config/default_multimodel.xml" />
+    <Merge>
+        <MaxDistance value="10" />
+        <Threshold value="0.40" />
+        <OverlapingRatio value="0.80" />
+        <Criteria value="RCProbability" />
+    </Merge>
+
+    <!--PreMerge: if true, activates preMerge in Tracking andsearches for Merge Parameters, else takes default set for default set see: ReliabilityMerge.cpp -->
+    <PreMerge value="true" >
+        <MaxDistance value="10" />
+        <Threshold value="0.40" />
+        <OverlapingRatio value="0.95" />
+        <Criteria value="None" />
+        <EliminateOverlapedClassifiedBlobs value="true" >
+            <OverlapingRatio value="0.95" />
+            <Probability value="0.95" />
+            <Reliability value="0.90" />
+        </EliminateOverlapedClassifiedBlobs>
+    </PreMerge>
+
+    <!--Mobile's blob history buffer size-->
+    <BlobBufferSize value="4" />
+
+    <!--Maximum number of trajectory points stored for a mobile (0 means no limit).-->
+    <TrajectoryMaxSize value="0" />
+
+    <!--Number of alternative solutions retained per related alternatives set. This number is used in the generation of the best alternatives for a related alternatives set.-->
+    <MaximumRetainedAlternativeSolutions value="5" />
+
+    <!--Maximal number of alternatives generated in the updating phase, determined as: reliabilityTrackingMaximalNumberOfPathAlternativesPerMobile * numberOfMobilesInAlternative-->
+    <MaximalNumberOfPathAlternativesPerMobile value="5" />
+
+    <!--Maximal number of paths generated for a mobile in the path updating phase-->
+    <MaximumAlternativeMobilePaths value="5" />
+
+    <!--Number of frames of mobile lifetime just analyzing 2D information.-->
+    <_2DLevelFrames value="5" /> <!--1000000-->
+
+    <!--Hypothesis elimination strategy. Possible values:-->
+    <!--MaximumLikelihoodEstimator: Elimination by reliability lower than a s.d. -->
+    <!--LeastReliable: Elimination by lowest reliability measure-->
+    <!--None: No elimination is done.-->
+    <EliminationStrategy value="LeastReliable" />
+
+    <!--Constant for cooling function with respect to time difference of a blob with current time. Function scale is seconds. function = exp(-t*lambda)-->
+    <CoolingFunctionLambda value="10.0" /> <!--10.0-->
+
+    <!--Thresholds to determine if mobile information is usable for generating the estimated next frame mobile attributes. They are also used to validate the 3D mobile information of the different possibilities generated as the initial 3D information for a mobile (using the information from all the blob history buffer), after the period of pure 2D Tracking. Also, both thresholds are used to determine which information to use in the determination of the research area of the blobs that can correspond to the visual evidence for existing mobiles in current frame.-->
+    <CoherenceReliabilityThreshold value="0.10" />
+    <CoherenceProbabilityThreshold value="0.40" />
+
+    <!--Threshold used to check if a mobile can be considered as an object of defined type. A mobile is tagged as unknown if: -->
+    <!--    numberOfFramesSinceFirstTimeSeen*(1 - reliabilityTrackingKnownSolutionThreshold) - unknownFramesNumber < 0 -->
+    <KnownSolutionThreshold value="0.50" />
+
+    <!--Probability for an alternative to not be eliminated. This probability is relative to the best alternative in a set of alternatives. So, an alternative will be erased if:-->
+    <!--    Palternative/Pbest < reliabilityTrackingAlternativeSolutionsProbabilityThreshold-->
+    <AlternativeSolutionsProbabilityThreshold value="0.3" />
+
+    <!--Thresholds for not considering alternatives which contain very bad mobiles according to different coherence criteria -->
+    <IgnoreByDimensionalCoherenceThreshold value="0.10" /><!--0.25-->
+    <IgnoreByVelocityCoherenceThreshold value="0.10" /><!--0.25-->
+
+    <!--Rate for immediate elimination of a mobile path, given the best calculated new mobile path for an existing mobile. The new mobile path is eliminated if:-->
+    <!--		Pmobile < Pbest * ImportanceRateForBestMobileAlternativeProbability -->
+    <ImportanceRateForBestMobileAlternativeProbability value="0.95" />
+
+    <!--Probability required for a mobile to pass to 'ensure' mode, which is the mode where it is considered that type is already determined for mobile so it won't be searched another type anymore.-->
+    <ProbabilityToEnsureMode value="0.9" />
+
+    <!--Maximum accepted rate of 3D base overlapping between two mobiles, to be considered as part of a valid alternative.-->
+    <Maximal3DBaseOverlapping value="0.30" />
+
+    <!--One of the criterias to consider two mobiles equal. Used for filtering objects with different id, which converged to same mobile, with the same visual evidence. -->
+    <Mobile2DCoverageRateToConsiderEqual value="0.95" />
+
+    <!--Threshold for determining when to consider a bounding box highly covered by another one. Used as one of the two criteria to determine if a mobile is in a special case: -->
+    <!-- - PART_OF_BIGGER : The visual evidence shows that a mobile is validated by its estimated information but, as evidence is bigger than expected, no precise information can be added from this last frame (blob considerably bigger than estimated 2D bounding box for mobile). -->
+    <!-- - PARTIALLY_DETECTED : The visual evidence shows that a mobile is partially validated by its estimated information but, as evidence is little than expected, no precise information can be added from this last frame (blob considerably little than estimated 2D bounding box for mobile).-->
+    <!-- - LOST : The visual evidence does not exist or is too partial. No information is added and reliability on data is decreased.-->
+    <HighVisualSupportThreshold value="0.95" />
+
+    <!--Threshold for determining when to consider a bounding box by lowly covered by another one. Used as one of the two criteria to determine if a mobile is in a special case. -->
+    <LowVisualSupportThreshold value="0.05" />
+
+    <!--Threshold for determining when to consider a bounding box immediately validating the estimated values for a mobile.-->
+    <BlobCompletellySupportedThreshold value="0.95" />
+
+    <!--Flag for activation of complete output-->
+    <InternalOutputActivated value="false" />
+
+    <!--Flag for activation of reduced output-->
+    <ReducedOutputActivated value="false" />
+
+    <!--Last resource if VAT is not able to recover a proper milliseconds difference from image timestamps. -->
+    <MeanMillisecondsDifferenceBetweenFrames value="40" />
+
+    <!--Accepted extra pixel variation accepted for a 2D dimension, covering segmentation errors in dimensions estimation. Used for validating a new mobile representing a path for an existing mobile. -->
+    <AcceptedPixelError value="2" />
+
+    <!--Rough estimation for maximal speed of expected objects in the scene, utilised if no other more precise speed can be deduced from 3D models.-->
+    <MaxObjectSpeed value="400.0" /> <!--[cm/sec]-->
+
+    <!--Probably implemented later, but it can bias results on tracking. If true, mergeable reduced unknown blobs will be merged, if no other combination of blobs results in a merge of type different than unknown.-->
+    <!--  <PreMergeReducedUnknownBlobs value="true" /> -->
+
+    <!--For finding visual evidence (blobs) involved with mobiles (potential new position/size/... information about the mobile) the
+        global reliability of the bounding box estimated by the dynamics multi-model is considered to establish the growth rate of the
+        bounding box in order to give the algorithm the necessary robustness on search of visual evidence. This way, the maximal growth of the search region
+        is when reliability is 0.0 and the minimal growth with reliability = 1.0.
+        For this purpose, maximal growth in pixels is determined by a multiplying factor for width and height of the bounding box, and a sum factor to the
+        result of factored region. These factors are: -->
+    <InvolvedVisualEvidenceMultiplyingFactor value="2.0" />
+    <InvolvedVisualEvidenceSumFactor value="200" /> <!--integer in pixels -->
+    <InvolvedVisualEvidenceMinIntersectionRatio value = "0.1" />
+
+
+    <!--ObjectLog: CSV Text log, recording in file LogName, for each frame,
+        Object ID with its bounding box central position, width, and height.
+        if true, activates logging. If LogName is empty, defaults to filename 'defaultObjectLog.txt' -->
+    <ObjectLog value="true" >
+        <!-- FORMAT:  LogRootName-OBJ.ID-CREATIONFRAME-FILECREATIONDATETIME.csv -->
+        <LogRootName value="VAT-Object" />
+        <!-- Set the dynamics model to be searched and shown from the multimodel -->
+        <LogModelDynamicsName value="Blob2DFromBGSubstractionModelDynamics" />
+        <!-- Set the instance model to be searched and shown from the multimodel -->
+        <LogModelInstanceName value="Blob2DFromBGSubstractionModelInstance" />
+    </ObjectLog>
+
+</ReliabilityMultiModelTrackingModule>
+
+
+<!-- HullToObjectModule: Compares the last blob CrCb histogram of each object
+     against the histogram of pixels near the moving region to complete the
+     region using regional information. Then, associates a convex hull to the
+     region, calculates the principal axis, and the distance function to borders
+     w/r to the axis.-->
+<HullToObjectModule>
+
+    <!-- Bin size for color histograms. -->
+    <ColorHistogramBinSize value="32"/>
+
+    <!-- Window allowed to check for a movement pixel, to perform histogram comparison on
+         regional segmentation. -->
+    <SearchWindowSize value="11"/>
+
+    <!-- Offset for considering points around the convex hull as part of the region for color
+         histogram determination -->
+    <ConvexHullOffset value="1"/>
+
+    <!-- Step (in pixels) to get normal distance measures from principal axis to region borders-->
+    <PrincipalAxisStep value="2"/>
+</HullToObjectModule>
+
+
+<!-- OpencvTracking -->
+    <!--BGFG dectector options: -->
+    <!--none-->	
+    <!--FDG -->
+    <!--FDGS -->
+    <!--MOG -->
+    <FGDetector value="none" />
+    <!--Blob dectector options: -->
+    <!--Simple: Detect new blob by uniform moving of connected components of FG mask-->	
+    <!--CC: Detect new blob by tracking CC of FG mask -->
+    <BlobDetector value="CC" />
+    <!--Blob tracker options: -->
+    <!--CCMSPF: Connected component tracking and MSPF resolver for collision-->	
+    <!--CC: Simple connected component tracking-->	
+    <!--MS: Mean shift algorithm-->
+    <!--MSFG: Mean shift algorithm with FG mask using-->
+    <!--MSPF: Particle filtering based on MS weight-->
+    <BlobTracker value="CCMSPF" />
+<!-- /OpencvTracking -->
+
+
+
+<!--EventosModulos;estadoI;id/next_states/label-->
+<!--estadoI, donde I es un numero-->
+<!--Observaciones: Comenzar el id desde 0-->
+<!--Ejemplo: EventosModulos;estado1;1/2,3,4/inicio-->
+<EventosModulos>
+    <!-- Ground-truth file -->
+    <estado0 value="0/1/inicio" />
+</EventosModulos>
+
+<ETISEOOutputModule>
+    <OutputFileName value="etiseo_results.xml" />
+    <EndFrameNumber value="803" />
+</ETISEOOutputModule>
+
+<IncrementalEventLearningModule>
+    <ContextsFile value="config/DeguContextsFile.xml" />
+    <ActivateHierarchyStats value="yes">
+        <OutputFileName value="miles_results.txt" />
+    </ActivateHierarchyStats>
+</IncrementalEventLearningModule>
+
+<!-- DeguObjectModule: sets object corresponding to a degu, using different criteria -->
+<DeguObjectModule>
+    <!-- First searches for known object ids, if defined, respecting the order of the list (the first that matches will be the degu)-->
+    <FilterById value="true">
+        <Id value="1"/>
+    </FilterById>
+
+    <!-- Assuming that a well detected degu cannot leave the space, a windows of tolerance is explored in case degu is lost in order
+         to continue tracking with other object -->
+<!--    <ContinueFromNearestPosition value="true">-->
+        <ToleranceInPixels value="100"/>
+<!--    </ContinueFromNearestToLastSeenPosition>-->
+
+    <!-- Idea: A basic 2D model could be learned to match with objects in case of loss. Learning with cooling function as 2D is locally reliable. -->
+
+</DeguObjectModule>
+
+<PlanarStatisticsModule>
+    <OutputFileName value="planar-statistics-results.txt" />
+    <OutputSampleRate value="1" />
+    <!--TimeForStill: Time for considering an object as still in [secs] -->
+    <TimeForStill value="0.5" />
+    <!--SpeedForStill: Speed for considering an object as still in [u/sec] (u: homography metric unit) -->
+    <SpeedForStill value="10" /> <!-- [cm/sec] -->
+    <!--Minimal rate of frames for considering that degu is on perimeter.-->
+    <RateOfFramesInPerimeter value="0.5" /> <!-- [% frames] -->
+    <!--Name of inner homography zone to consider points out as in perimeter.-->
+    <OutZoneForPerimeter value="InsideZone" />
+</PlanarStatisticsModule>
+
+
+</MODULE_PARAMETERS>

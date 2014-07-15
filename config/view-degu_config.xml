@@ -1,0 +1,138 @@
+<!DOCTYPE VIEW_PARAMETERS>
+<VIEW_PARAMETERS>
+<!-- ViewDistribution. Possible values: -->
+<!--   "4Views" : 2 rows and 2 columns of views.  -->
+<!--   "2ViewsH" : 2 views horizontally.  -->
+<!--   "2ViewsV" : 2 views vertically.  -->
+<ViewDistribution value="4Views">
+    <View value="true">
+        <Row value="0"/>
+        <Column value="0"/>
+        <Label value="Segmentation View"/>
+                <afterModule value="DeguObjectModule"/>
+		<sequence value="true">
+                       <setColouredForeground/>
+                       <!--setCurrent/-->
+                       <setHomographyContext/>
+                       <set2DContext/>
+                       <setBlobs/>
+                       <setDegu/>
+		</sequence>
+                <SaveToDir value="false">
+                    <Directory value="SEGMENTATION-MODULE"/>
+                </SaveToDir>
+    </View>
+
+    <View value="true">
+        <Row value="0"/>
+        <Column value="1"/>
+        <Label value="Degu Module View"/>
+                <afterModule value="DeguObjectModule"/>
+                <sequence value="true">
+                       <setColouredForeground/>
+                       <setCurrent/>
+                       <setHomographyContext/>
+                       <set2DContext/>
+                       <setBlobs/>
+                       <setDegu/>
+                       <setObjectHulls/>
+                </sequence>
+                <SaveToDir value="false">
+                    <Directory value="DEGU-MODULE"/>
+                </SaveToDir>
+    </View>
+
+    <View value="true">
+        <Row value="1"/>
+        <Column value="0"/>
+        <Label value="Multi Model Tracking View"/>
+        <afterModule value="ObjectFilteringModule"/>
+        <sequence value="true">
+               <setCurrent/>
+               <setHomographyContext/>
+               <set2DContext/>
+               <setBlobs/>
+               <setMultiModelObjectTrajectory2D/>
+               <setMultiModelObjectCurrentInvolvedArea/>
+               <setMultiModelObjectBBoxProjection/>
+               <setMultiModelObjects/>
+        </sequence>
+        <SaveToDir value="false">
+            <Directory value="MMRT-MODULE"/>
+        </SaveToDir>
+    </View>
+
+    <View value="true">
+        <Row value="1"/>
+        <Column value="1"/>
+        <Label value="Regional Event Learning"/>
+		<afterModule value="IncrementalEventLearningModule"/>
+		<sequence value="true">
+                        <setCurrent/>
+                        <setLearning>
+				<!--Displays configuration file-->
+				<!--LearningDisplay options, active "yes" or "no"-->
+				<!--Applied to first defined learning context -->
+				<LearningDisplay value="yes">
+                                        <UsedPosition value="H"/> <!--"2D" or "3D", "H" or "DEGU": only contexts with these attributes can be chosen.-->
+					<!-- HighlightedAttribute, can be:  -->
+					<!--    HighlightAttribute: According to position, highlights an attribute -->
+					<!--    Events: According to position, show event transitions, highlighted by probability -->
+					<Type value="HighlightAttribute" />
+					<!-- HighlightedAttribute, can be:  -->
+					<!--    P: Normalized probability in space -->
+					<HighlightedAttribute value="P" />
+					<!-- <HighlightedAttribute value="V2D" /> -->
+					<!-- PStateThreshold, used to select the groups of siblings on the tree, as:  -->
+					<!--   1. If current state is < PStateThreshold draw it
+						   2. Else
+								2.a) If no child is > P, draw it
+								2.b) If at least one child > P,
+									- Draw those < P
+									- Recurse to those >= P
+				   -->
+					<PStateThreshold value="0.00002" />
+
+					<!-- PFlat, can be:  -->
+					<!--    yes: Shows a state as a disc of radius s.d. and center at mean of position, coloured with peak probability value  -->
+					<!--    no: Shows a state as a disc of radius s.d. and center at mean of position, coloured as a gaussian  -->
+					<PFlat value="no" />
+
+					<!-- ShowRecognised, can be: -->
+					<!--    yes: Shows recognised states and events -->
+					<ShowRecognised value="yes" />
+
+					<!-- PEventThreshold, used to recursively select the events from the
+						 frequent states, assuming that frequent states generate frequent
+						 events. The most likely event from a frequent state is always
+						 shown, and subsequent events from arriving states are also shown
+						 until Pstarting_state * Pevent1 * ... *PeventK > PEventThreshold.
+						 Then, PEventThreshold >= PStateThreshold => just to show most likely
+						 event from starting state.
+					-->
+					<PEventThreshold value="0.05" />
+
+					<!-- TransparencyLevel, used to set transparency of added learning visual information. Value in [0;255]. -->
+					<TransparencyLevel value="128" />
+
+					<!-- TransparentProbability, stablishes the normalised probability threshold for considering low probabilities transparent. -->
+					<TransparentProbability value="0.1" />
+
+					<!-- Activates Events Visualization: "yes" or "no" -->
+					<ShowEvents value="yes" />
+				</LearningDisplay>
+			</setLearning>
+		</sequence>
+                <SaveToDir value="false">
+                    <Directory value="LEARNING-MODULE"/>
+                </SaveToDir>
+    </View>
+</ViewDistribution>
+
+<!-- Size of a single view (352,240) (640,480)-->
+<ViewSize value="true">
+    <Width value="500"/>
+    <Height value="360"/>
+</ViewSize>
+
+</VIEW_PARAMETERS>

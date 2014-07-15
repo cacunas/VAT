@@ -1,0 +1,114 @@
+<!DOCTYPE ObjectModels>
+<ObjectModels>
+   <ObjectModel name="PERSON" type="postural" model="ParallelpipedModel">
+       <width model="GaussianFunction">
+          <mean value="40.0"/>
+          <sigma value="80.0"/>
+          <min  value="30.0"/>
+          <max  value="140.0"/>
+       </width>
+       <height model="GaussianFunction">
+          <mean value="150.0"/>
+          <sigma value="100.0"/>
+          <min value="25.0"/>
+          <max value="220.0"/>
+       </height>
+       <depth model="GaussianFunction">
+          <mean value="40.0"/>
+          <sigma value="100.0"/>
+          <min value="10.0"/>
+          <max value="220.0"/>
+       </depth>
+<!-- Human speed gaussian function and limits of the expected persons in the scene, in cm/s -->	          
+       <velocity model="GaussianFunction">
+          <mean value="100.0"/>
+          <sigma value="320.0"/>
+          <min value="0.0"/>
+          <max value="1020.0"/>
+       </velocity>
+<!-- List of postures to be defined for a PERSON class, as a postural model type -->
+       <PostureList>
+          <Posture name="STANDING" model="ParallelpipedModel">
+             <width model="GaussianFunction">
+                <mean value="40.0"/>
+                <sigma value="20.0"/>
+                <min  value="30.0"/>
+                <max  value="100.0"/>
+             </width>
+             <height model="GaussianFunction">
+                <mean value="170.0"/>
+                <sigma value="60.0"/>
+                <min value="120.0"/>
+                <max value="220.0"/>
+             </height>
+             <depth model="GaussianFunction">
+                <mean value="25.0"/>
+                <sigma value="30.0"/>
+                <min value="20.0"/>
+                <max value="70.0"/>
+             </depth>
+<!-- Human speed gaussian function and limits of the expected persons in the scene, in cm/s -->	          
+             <velocity model="GaussianFunction">
+                <mean value="100.0"/>
+                <sigma value="320.0"/>
+                <min value="0.0"/>
+                <max value="1020.0"/>
+             </velocity>
+          </Posture>
+          <Posture name="CROUCHING" model="ParallelpipedModel">
+             <width model="GaussianFunction">
+                <mean value="50.0"/>
+                <sigma value="20.0"/>
+                <min  value="40.0"/>
+                <max  value="100.0"/>
+             </width>
+             <height model="GaussianFunction">
+                <mean value="110.0"/>
+                <sigma value="60.0"/>
+                <min value="90.0"/>
+                <max value="140.0"/>
+             </height>
+             <depth model="GaussianFunction">
+                <mean value="60.0"/>
+                <sigma value="30.0"/>
+                <min value="40.0"/>
+                <max value="80.0"/>
+             </depth>
+<!-- Human speed gaussian function and limits of the expected persons in the scene, in cm/s -->	          
+             <velocity model="GaussianFunction">
+                <mean value="10.0"/>
+                <sigma value="32.0"/>
+                <min value="0.0"/>
+                <max value="100.0"/>
+             </velocity>
+          </Posture>
+       </PostureList>
+   </ObjectModel>
+   <ObjectModel name = "VEHICLE" type="rigid" model="ParallelpipedModel">
+       <width model="GaussianFunction">
+          <mean value="155.0"/>
+          <sigma value="50.0"/>
+          <min  value="125.0"/>
+          <max  value="190.0"/>
+       </width>
+       <height model="GaussianFunction">
+          <mean value="134.42"/>
+          <sigma value="35"/>
+          <min value="100.0"/>
+          <max value="160.0"/>
+       </height>
+       <depth model="GaussianFunction">
+          <mean value="370.83"/>
+          <sigma value="100.0"/>
+          <min value="200.0"/>
+          <max value="480.0"/>
+       </depth>
+<!-- Human speed gaussian function and limits of the expected persons in the scene, in cm/s -->	          
+       <velocity model="GaussianFunction">
+          <mean value="1500.0"/>
+          <sigma value="4000.0"/>
+          <min value="0.0"/>
+          <max value="3000.0"/>
+       </velocity>
+   </ObjectModel>
+</ObjectModels>

@@ -1,0 +1,141 @@
+<!DOCTYPE SceneXML>
+<scene>
+<!--perspective_matrix
+      m00="0.229485"        m01="0.211476"      m02="-0.127994" m03="194.491"
+      m10="0.0390366"       m11="-0.0710861"    m12="-0.303204" m13="397.16"
+      m20="-0.000165299"    m21="0.000833"      m22="-0.000823" m23="1.000000" /-->
+<perspective_matrix
+        m00="-1.2684973"	m01="0.5852011"	m02="-0.26705385"	m03="398.92693"
+ 	m10="0.10226901"	m11="0.4189351"	m12="-1.2123636"	m13="229.53982"
+ 	m20="-0.0013290536"	m21="-0.00082828449"	m22="-0.0013004157"	m23="1" />
+<homography_matrix
+      h00="0.080726467"         h01="-0.00015524321"	h02="-6.7804022"
+      h10="-0.00020497253"	h11="0.075839837"	h12="-0.28614166"
+      h20="-5.1243133e-06"	h21="-2.6052809e-05"	h22="1" />
+
+<!--Perspective transform scene definitions: -->
+<ZoneList>
+    <Zone id = "1" name = "Zone1">
+        <OutlineList>
+            <Point x = "-235"    y = "-110"  z = "0" />
+            <Point x = "300"    y = "-110"  z = "0" />
+            <Point x = "300"  y = "200"  z = "0" />
+            <Point x = "-235"  y = "200"  z = "0" />
+        </OutlineList>
+    </Zone>
+</ZoneList>
+<AreaList>
+    <Area name = "TestArea3D">
+        <AreaZonesList>
+            <AreaZone zone_name = "Zone1" />
+        </AreaZonesList>
+    </Area>
+</AreaList>
+<WallList>
+    <Wall id="1" name="Wall1" height="250">
+        <StartPoint x="7" y="563" z="0" />
+        <EndPoint   x="176"  y="566" z="0" />
+    </Wall>
+    <Wall ident="2" name="Wall2" height="250">
+        <Start_point x="7" y="563" z="0" />
+        <End_point   x="-20"  y="360" z="0" />
+    </Wall>
+</WallList>
+<ContextObjectsList>
+    <ContextObject id = "1" name ="mueble1" height = "75">
+        <OutlineList>
+             <Point x = "-20"  y = "-60" z = "0" />
+             <Point x = "-20"  y = "-110" z = "0" />
+             <Point x = "-60"  y = "-110" z = "0" />
+             <Point x = "-60"  y = "-60" z = "0" />
+        </OutlineList>
+    </ContextObject>
+    <ContextObject id = "2" name ="mueble2" height = "75">
+        <OutlineList>
+             <Point x = "160"  y = "-60" z = "0" />
+             <Point x = "127"  y = "-60" z = "0" />
+             <Point x = "127"  y = "-110" z = "0" />
+             <Point x = "160"  y = "-110" z = "0" />
+        </OutlineList>
+    </ContextObject>
+    <ContextObject id = "3" name ="mueble3" height = "75">
+        <OutlineList>
+             <Point x = "138"  y = "151" z = "0" />
+             <Point x = "98"  y = "151" z = "0" />
+             <Point x = "98"  y = "200" z = "0" />
+             <Point x = "138"  y = "200" z = "0" />
+        </OutlineList>
+    </ContextObject>
+    <ContextObject id = "3" name ="mueble3" height = "75">
+        <OutlineList>
+             <Point x = "-200"  y = "-55" z = "0" />
+             <Point x = "-235"  y = "-55" z = "0" />
+             <Point x = "-235"  y = "-20" z = "0" />
+             <Point x = "-200"  y = "-20" z = "0" />
+        </OutlineList>
+    </ContextObject>
+</ContextObjectsList>
+
+<!--Image scene defitions-->
+<Zone2DList>
+    <Zone2D id = "1" name = "Object1" type="Polygon">
+        <OutlineList>
+            <Point X = "100"    Y = "50" />
+            <Point X = "140"  Y = "50" />
+            <Point X = "140"  Y = "200" />
+        </OutlineList>
+    </Zone2D>
+    <Zone2D id = "2" name = "Object2">
+        <OutlineList>
+        <Point X = "300"    Y = "150" />
+        <Point X = "340"  Y = "150" />
+        <Point X = "340"  Y = "300" />
+        </OutlineList>
+    </Zone2D>
+    <Zone2D id = "3" name = "Ellipse1" type="Ellipse">
+        <Center X = "100"    Y = "200" />
+        <Radius RX = "30"      RY = "40" />
+    </Zone2D>
+</Zone2DList>
+<Area2DList>
+    <!--Area2D name = "TestArea3D">
+        <AreaZonesList>
+            <AreaZone2D zone_name = "Zone1" />
+            <AreaZone2D zone_name = "Zone2" />
+        </AreaZonesList>
+    </Area2D-->
+</Area2DList>
+
+<!--Homography transform scene defitions-->
+<ZoneHomographyList>
+    <ZoneHomography id = "1" name = "Object1">
+        <OutlineList>
+            <Point X = "0.0"    Y = "0.0" />
+            <Point X = "60.0"  Y = "0.0" />
+            <Point X = "60.0"  Y = "40.0" />
+            <Point X = "0.0"  Y = "40.0" />
+        </OutlineList>
+    </ZoneHomography>
+    <ZoneHomography id = "2" name = "InsideZone" type="Polygon">
+        <OutlineList>
+            <Point X = "10.0"    Y = "10.0" />
+            <Point X = "50.0"  Y = "10.0" />
+            <Point X = "50.0"  Y = "30.0" />
+            <Point X = "10.0"  Y = "30.0" />
+        </OutlineList>
+    </ZoneHomography>
+    <ZoneHomography id = "3" name = "Ellipse1" type="Ellipse">
+        <Center X = "20"    Y = "30" />
+        <Radius RX = "10"      RY = "5.5" />
+    </ZoneHomography>
+</ZoneHomographyList>
+
+<AreaHomographyList>
+    <!--AreaHomography name = "TestArea3D">
+        <AreaZonesList>
+            <AreaZoneHomography zone_name = "Zone1" />
+        </AreaZonesList>
+    </AreaHomography-->
+</AreaHomographyList>
+
+</scene>

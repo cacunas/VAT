@@ -1,0 +1,147 @@
+<!DOCTYPE VIEW_PARAMETERS>
+<VIEW_PARAMETERS>
+<!-- ViewDistribution. Possible values: -->
+<!--   "4Views" : 2 rows and 2 columns of views.  -->
+<!--   "2ViewsH" : 2 views horizontally.  -->
+<!--   "2ViewsV" : 2 views vertically.  -->
+<ViewDistribution value="4Views">
+<!-- ViewDistribution value="4ViewsMILES" -->
+    <!-- View. Value is the activation of the view information. -->
+    <!-- View. Position (Row, Column) out of bounds of the ViewDistribution is ignored. -->
+    <!-- View. A repeated Position (Row, Column) is ignored. -->
+    <!-- (Row, Column) is the unique id of the view. -->
+		<!-- afterModule. Value is the moment to draw the layers of paint defined in the sequence -->
+		<!-- sequence. Value is the activation to show the image in this view. -->
+		<!-- sequence. Contain the sequence of layers of paint. -->
+			<!--	"setBlobs" : draw the set of blobs contained in the Datapool. --> 
+			<!--	"setLearning" : Example with parameters defined. -->
+			<!--	"setObjects" : draw the set of objects 2D contained in the Datapool. -->
+    <View value="true">
+        <Row value="0"/>
+        <Column value="0"/>
+        <Label value="Camera Image"/>
+                <afterModule value="AcquisitionCameraModule"/>
+		<sequence value="true">
+                        <setCurrent/>
+		</sequence>
+    </View>
+    <View value="true">
+        <Row value="0"/>
+        <Column value="1"/>
+        <!--Label value="Contexto"/-->
+        <Label value="Segmentation"/>
+                <afterModule value="BlobFilteringModule"/>
+		<sequence value="true">
+                        <setForeground/>
+                        <setHomographyContext/>
+                        <!--set2DContext/-->
+                        <setBlobs/>
+		</sequence>
+    </View>
+    <View value="true">
+        <Row value="1"/>
+        <Column value="0"/>
+        <Label value="Background"/>
+                <!--regionalSegmentationModule afterModule value="BlobFilteringModule"/-->
+        <!--Label value="Tracking"/-->
+                <afterModule value="HullToObjectModule"/>
+                <sequence value="true">
+                        <setBackground/>
+                        <!--setCurrent/-->
+                        <!--setHomographyContext/-->
+                        <!--setObjects/-->
+                        <!--setObjectHulls/-->
+                </sequence>
+    </View>
+
+    <View value="true">
+        <Row value="1"/>
+        <Column value="1"/>
+        <!--Label value="Segmentation"/-->
+        <!--Label value="Tracking"/-->
+        <Label value="Object to Degu"/>
+                <afterModule value="DeguObjectModule"/>
+		<sequence value="true">
+                       <!--setColouredForeground/-->
+                       <setCurrent/>
+                       <setHomographyContext/>
+                       <set2DContext/>
+                       <setBlobs/>
+                       <setDegu/>
+		</sequence>
+                <SaveToDir value="false">
+                    <Directory value="DEGU-MODULE"/>
+                </SaveToDir>
+    </View>
+    <View value="false">
+        <Row value="1"/>
+        <Column value="1"/>
+        <!--Label value="Tracking"/-->
+        <Label value="Learning"/>
+		<afterModule value="IncrementalEventLearningModule"/>
+		<sequence value="true">
+                        <setCurrent/>
+                        <setLearning>
+				<!--Displays configuration file-->
+				<!--LearningDisplay options, active "yes" or "no"-->
+				<!--Applied to first defined learning context -->
+				<LearningDisplay value="yes">
+					<UsedPosition value="2D"/> <!--"2D" or "3D": only contexts with these attributes can be chosen.-->
+					<!-- HighlightedAttribute, can be:  -->
+					<!--    HighlightAttribute: According to position, highlights an attribute -->
+					<!--    Events: According to position, show event transitions, highlighted by probability -->
+					<Type value="HighlightAttribute" />
+					<!-- HighlightedAttribute, can be:  -->
+					<!--    P: Normalized probability in space -->
+					<HighlightedAttribute value="P" />
+					<!-- <HighlightedAttribute value="V2D" /> -->
+					<!-- PStateThreshold, used to select the groups of siblings on the tree, as:  -->
+					<!--   1. If current state is < PStateThreshold draw it
+						   2. Else
+								2.a) If no child is > P, draw it
+								2.b) If at least one child > P,
+									- Draw those < P
+									- Recurse to those >= P
+				   -->
+					<PStateThreshold value="0.00002" />
+
+					<!-- PFlat, can be:  -->
+					<!--    yes: Shows a state as a disc of radius s.d. and center at mean of position, coloured with peak probability value  -->
+					<!--    no: Shows a state as a disc of radius s.d. and center at mean of position, coloured as a gaussian  -->
+					<PFlat value="no" />
+
+					<!-- ShowRecognised, can be: -->
+					<!--    yes: Shows recognised states and events -->
+					<ShowRecognised value="yes" />
+
+					<!-- PEventThreshold, used to recursively select the events from the
+						 frequent states, assuming that frequent states generate frequent
+						 events. The most likely event from a frequent state is always
+						 shown, and subsequent events from arriving states are also shown
+						 until Pstarting_state * Pevent1 * ... *PeventK > PEventThreshold.
+						 Then, PEventThreshold >= PStateThreshold => just to show most likely
+						 event from starting state.
+					-->
+					<PEventThreshold value="0.05" />
+
+					<!-- TransparencyLevel, used to set transparency of added learning visual information. Value in [0;255]. -->
+					<TransparencyLevel value="128" />
+
+					<!-- TransparentProbability, stablishes the normalised probability threshold for considering low probabilities transparent. -->
+					<TransparentProbability value="0.1" />
+
+					<!-- Activates Events Visualization: "yes" or "no" -->
+					<ShowEvents value="yes" />
+				</LearningDisplay>
+			</setLearning>
+		</sequence>
+    </View>
+</ViewDistribution>
+
+<!-- Size of a single view (352,240) (640,480)-->
+<ViewSize value="true">
+    <Width value="455"/>
+    <Height value="330"/>
+</ViewSize>
+
+</VIEW_PARAMETERS>

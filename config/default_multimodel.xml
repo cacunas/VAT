@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<MULTI_MODEL>
+          <!-- The multimodel must generate a Directed Acyclic Graph.
+               A verification function will check if this condition
+               is accomplished on initialization. -->
+          <Model name = "BaseModel" model = "Blob2DFromBGSubstractionModel" buffer = "5">
+                  <Parameters>
+                        <MinimalAttributeVelocityReliability value = "0.1"/>
+                        <MinimalAttributeAccelerationReliability value = "0.1"/>
+                        <MinimalWidth value = "5"/>
+                        <MinimalHeight value = "5"/>
+                        <PixelAcuity value = "3"/>
+                  </Parameters>
+                  <Dependences>
+                  <!--Here set the dependences: models required for this model to be calculated.
+                      If empty, it only requires the standard segmentation as input.
+                      Example:
+                      <Dependence name="A model name">
+                      <Dependence name="Other model name">
+                  -->
+                  </Dependences>
+          </Model>
+          <!-- FALTA: triggers para submodelos (activacion: confiabilidad padre,
+                      confiabilidad/presencia de input, ocultacion),
+                      subsegmentacion (parcial segun region del padre, definible
+                      de distintas imagenes de segmentacion), clasificacion -->
+</MULTI_MODEL>

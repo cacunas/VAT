@@ -1,0 +1,43 @@
+<!DOCTYPE VIEW_PARAMETERS>
+<VIEW_PARAMETERS>
+	<!-- ViewDistribution. Possible values: -->
+	<!--   "4Views" : 2 rows and 2 columns of views.  -->
+	<!--   "2ViewsH" : 2 views horizontally.  -->
+	<!--   "2ViewsV" : 2 views vertically.  -->
+	<ViewDistribution value="2ViewsV">
+		<View value="true">
+			<Row value="0" />
+			<Column value="0" />
+			<Label value="Antes de" />
+			<afterModule value="ConnectedComponentsRLEModule" />
+			<sequence value="true">
+                                <setCurrent />
+                                <setBlobs />
+			</sequence>
+			<SaveToDir value="false">
+				<Directory value="SEGMENTATION-MODULE" />
+			</SaveToDir>
+		</View>
+		<View value="true">
+			<Row value="1" />
+			<Column value="0" />
+			<Label value="Después de" />
+<!--			<afterModule value="BlobFilteringModule" />-->
+                        <afterModule value="BackgroundInitializationModule" />
+                        <sequence value="true">
+<!--				<setCurrent/>-->
+<!--				<setColouredForeground />-->
+                                <setBackground />
+                                <setBlobs />
+			</sequence>
+			<SaveToDir value="false">
+				<Directory value="FOOTBALL-MODULE" />
+			</SaveToDir>
+		</View>
+	</ViewDistribution>
+	<!-- Size of a single view (352,240) (640,480)-->
+	<ViewSize value="true">
+		<Width value="540" />
+		<Height value="250" />
+	</ViewSize>
+</VIEW_PARAMETERS>

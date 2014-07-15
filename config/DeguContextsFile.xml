@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<LEARNING_CONTEXT_LIST>
+          <Learning_Context name = "DEGU-Home-Context" init_file = "">
+                  <Involved_Object_List>
+                        <Involved_Object name = "ANY2D"/>
+                  </Involved_Object_List>
+                  <Numerical_Attribute_List>
+                      <!--Numerical_Attribute name = "V2D" acuity = "25.0"/-->
+                      <Numerical_Attribute name = "HX" acuity = "40.0"/>
+                      <Numerical_Attribute name = "HY" acuity = "40.0"/>
+                  </Numerical_Attribute_List>
+          </Learning_Context>
+          <Learning_Context name = "DEGU-Corners-Context" init_file = "">
+                  <Involved_Object_List>
+                        <Involved_Object name = "ANY2D"/>
+                  </Involved_Object_List>
+                  <Symbolic_Attribute_List>
+                      <Symbolic_Attribute name = "DEGU_CORNER"/>
+                  </Symbolic_Attribute_List>
+          </Learning_Context>
+</LEARNING_CONTEXT_LIST>

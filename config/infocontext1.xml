@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+
+<CONTEXT_DESCRIPTION xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:noNamespaceSchemaLocation = "http://www-sop.inria.fr/orion/personnel/Alberto.Avanzi/context_definition.xsd">
+    <CAMERA cam_id = "1" camera_name = "ORION_BOREL" img_width = "352" img_height = "288">
+<Calibration_matrix
+        m00="-0.0029922289"     m01="0.0001145883"      m02="3.3687017e-05"     m03="0.48082774"
+        m10="0.00026431461"     m11="-4.8542317e-05"    m12="-0.0036244435"     m13="0.876793"
+        m20="1.0237515e-06"     m21="-3.3484271e-06"    m22="-5.4952936e-07"    m23="0.0040671593" />
+        <Location x = "-115" y = "300" z = "1160" />
+	<Digit_box_list>
+	</Digit_box_list>
+    </CAMERA>
+
+    <_3D_EMPTY_SCENE>
+        <Referential ref_num = "1" ref_name = "INFO" />
+	<Plane_list>
+             <!-- For 'orientation' field, 0 = HORIZONTAL and 1 = VERTICAL -->
+             <Plane name = "ground" orientation = "0" eq_x = "0" eq_y = "0" eq_z = "1" eq_w = "0" />
+        </Plane_list>
+        <Zone_list>
+             <Zone ident = "1" name = "DoorZone1" plane_name = "ground">
+                  <Ref_distance_list>
+                  </Ref_distance_list>
+                  <Properties_list>
+                     <Property name = "In_out_zone"/>
+                  </Properties_list>
+                  <Outline_list>
+                       <Point x = "0"     y = "20" z = "0" />
+                       <Point x = "0"     y = "107"  z = "0" />
+                       <Point x = "50"   y = "107" z = "0" />
+                       <Point x = "50" y = "20"  z = "0" />
+                  </Outline_list>
+             </Zone>
+             <Zone ident = "2" name = "DoorZone2" plane_name = "ground">
+                  <Ref_distance_list>
+                  </Ref_distance_list>
+                  <Properties_list>
+                     <Property name = "In_out_zone"/>
+                  </Properties_list>
+                  <Outline_list>
+                       <Point x = "0"     y = "127" z = "0" />
+                       <Point x = "0"     y = "216"  z = "0" />
+                       <Point x = "50"   y = "216" z = "0" />
+                       <Point x = "50" y = "127"  z = "0" />
+                  </Outline_list>
+             </Zone>
+             <Zone ident = "3" name = "DoorZone3" plane_name = "ground">
+                  <Ref_distance_list>
+                  </Ref_distance_list>
+                  <Properties_list>
+                     <Property name = "In_out_zone"/>
+                  </Properties_list>
+                  <Outline_list>
+                       <Point x = "0"     y = "582" z = "0" />
+                       <Point x = "0"     y = "653"  z = "0" />
+                       <Point x = "50"   y = "653" z = "0" />
+                       <Point x = "50" y = "582"  z = "0" />
+                  </Outline_list>
+             </Zone>
+             <Zone ident = "4" name = "DoorZone4" plane_name = "ground">
+                  <Ref_distance_list>
+                  </Ref_distance_list>
+                  <Properties_list>
+                     <Property name = "In_out_zone"/>
+                  </Properties_list>
+                  <Outline_list>
+                       <Point x = "0"     y = "685" z = "0" />
+                       <Point x = "0"     y = "756"  z = "0" />
+                       <Point x = "50"   y = "756" z = "0" />
+                       <Point x = "50" y = "685"  z = "0" />
+                  </Outline_list>
+             </Zone>
+        </Zone_list>
+        <Area_list>
+             <Area name = "Informatica">
+                  <Area_zones_list>
+		       <Area_zone zone_name = "DoorZone1" />
+		       <Area_zone zone_name = "DoorZone2" />
+		       <Area_zone zone_name = "DoorZone3" />
+		       <Area_zone zone_name = "DoorZone4" />
+                  </Area_zones_list>
+             </Area>
+        </Area_list>
+        <Wall_list>
+        </Wall_list>
+ 	<Equipment_list>
+        </Equipment_list>
+    </_3D_EMPTY_SCENE>
+    <EXPECTED_OBJECTS>
+    </EXPECTED_OBJECTS>
+</CONTEXT_DESCRIPTION>

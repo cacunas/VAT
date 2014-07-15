@@ -1,0 +1,84 @@
+<!DOCTYPE VIEW_PARAMETERS>
+<VIEW_PARAMETERS>
+<!-- ViewDistribution. Possible values: -->
+<!--   "4Views" : 2 rows and 2 columns of views.  -->
+<!--   "2ViewsH" : 2 views horizontally.  -->
+<!--   "2ViewsV" : 2 views vertically.  -->
+<ViewDistribution value="4Views">
+<View value="true">
+    <Row value="0"/>
+    <Column value="0"/>
+    <Label value="Segmentation CC View"/>
+    <afterModule value="ConnectedComponentsRLEModule"/>
+    	<sequence value="true">
+       	   <setColouredForeground/>
+	   <setHomographyContext/>
+	   <set2DContext/>
+	   <setBlobs/>
+    	</sequence>
+    	<SaveToDir value="false">
+	   <Directory value="SEG-MODULE"/>
+        </SaveToDir>
+    </View>
+    <View value="true">
+        <Row value="0"/>
+        <Column value="1"/>
+        <Label value="BG Blob Filtering View"/>
+    	<afterModule value="BlobFilteringModule"/>
+    	<sequence value="true">
+           <setBackground/>
+           <setHomographyContext/>
+           <set2DContext/>
+    	</sequence>
+    	<SaveToDir value="false">
+            <Directory value="DEGU-MODULE"/>
+    	</SaveToDir>
+    </View>
+    <View value="true">
+        <Row value="1"/>
+        <Column value="0"/>
+        <Label value="Multi Model Tracking View"/>
+        <afterModule value="ReliabilityMultiModelTrackingModule"/>
+        <sequence value="true">
+               <setCurrent/>
+               <setHomographyContext/>
+               <set2DContext/>
+               <setBlobs/>
+               <setMultiModelObjectTrajectory2D/>
+               <setMultiModelObjectCurrentInvolvedArea/>
+               <setMultiModelObjectBBoxProjection/>
+               <setMultiModelObjects/>
+        </sequence>
+        <SaveToDir value="false">
+            <Directory value="MMRT-MODULE"/>
+        </SaveToDir>
+    </View>
+    <View value="true">
+        <Row value="1"/>
+        <Column value="1"/>
+        <Label value="MM Tracking Filtered View"/>
+    	<afterModule value="ObjectFilteringModule"/>
+        <sequence value="true">
+	       <setCurrent/>
+	       <setHomographyContext/>
+	       <set2DContext/>
+	       <setBlobs/>
+	       <setMultiModelObjectTrajectory2D/>
+	       <setMultiModelObjectCurrentInvolvedArea/>
+	       <setMultiModelObjectBBoxProjection/>
+	       <setMultiModelObjects/>
+        </sequence>
+        <SaveToDir value="false">
+            <Directory value="MMRT-FILTERED-MODULE"/>
+        </SaveToDir>
+    </View>
+ 
+</ViewDistribution>
+
+<!-- Size of a single view (352,240) (640,480)-->
+<ViewSize value="true">
+    <Width value="460"/>
+    <Height value="333"/>
+</ViewSize>
+
+</VIEW_PARAMETERS>

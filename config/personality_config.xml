@@ -1,0 +1,15 @@
+<!DOCTYPE MODULE_PARAMETERS>
+<MODULE_PARAMETERS>
+<!--Archivo de configuracion por defecto-->
+<!--AcquisitionModule-->
+<AcquisitionModule>
+    <startFrame value="1" /> <!-- Personality -->
+    <subDirectories value="no" />
+    <videoDirectory value="/media/extra-ext4/VIDEOS/PERSONALITY/SET04" />
+    <!--Last resource if VAT is not able to recover a proper milliseconds difference from image timestamps (maybe unexisting timestamp). -->
+    <defaultMillisecs value="40" />
+    <!--store currentImage in previousImage /-->
+    <saveCurrent value="yes" />
+</AcquisitionModule>
+
+</MODULE_PARAMETERS>

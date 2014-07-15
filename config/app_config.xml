@@ -1,0 +1,23 @@
+<!DOCTYPE APP_PARAMETERS>
+<APP_PARAMETERS>
+<!--Archivo de configuracion de la aplicacion-->
+
+<!--<ViewConfigFile value="config/view_config.xml"/>-->
+<ViewConfigFile value="config/view-degu_config.xml"/>
+<!--<ViewConfigFile value="config/view-gray_config.xml"/>-->
+<!--<ViewConfigFile value="config/view-degu_config-debug.xml"/>-->
+<!--ViewConfigFile value="config/view-football_config.xml"/-->
+<!--<ViewConfigFile value="config/view-perso_config.xml"/>-->
+
+<!--Activa Time Stats de los modulos ejecutados-->
+<ActivateTimeStats value="yes">
+    <OutputToFile value="yes"> <!--Si respuesta es 'no': salida estándar-->
+        <!--Formato de archivo de salida: OutputFileNamePrefixFECHA-HORA.txt -->
+        <OutputFileNamePrefix value="VAT-TimeStats-" />
+    </OutputToFile>
+    <!--Registra el tiempo cada AtStep frames -->
+    <AtStep value="1" />
+    <!--Registra el tiempo en el frame AtFrame (ignora si es <0) -->
+    <AtFrame value="-1" />
+</ActivateTimeStats>
+</APP_PARAMETERS>

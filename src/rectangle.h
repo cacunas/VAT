@@ -1,0 +1,9 @@
+#ifndef _RECTANGLE_H_
+#define _RECTANGLE_H_
+
+
+//IMPLEMENTATIONS IN .H FOR TEMPLATE CLASES
+
+
+
+#endif /* _RECTANGLE_H_ */  

@@ -1,0 +1,46 @@
+<!DOCTYPE VIEW_PARAMETERS>
+<VIEW_PARAMETERS>
+<!-- ViewDistribution. Possible values: -->
+<!--   "4Views" : 2 rows and 2 columns of views.  -->
+<!--   "2ViewsH" : 2 views horizontally.  -->
+<!--   "2ViewsV" : 2 views vertically.  -->
+<ViewDistribution value="4Views">
+    <View value="true">
+        <Row value="0"/>
+        <Column value="0"/>
+        <Label value="CurrentImage"/>
+                <afterModule value="AcquisitionModule"/>
+		<sequence value="true">
+                       <setCurrent/>
+		</sequence>
+    </View>
+    <View value="true">
+        <Row value="0"/>
+        <Column value="1"/>
+        <Label value="Personality Result"/>
+                <afterModule value="PersonalityModule"/>
+		<sequence value="true">
+                        <setPersonality/>
+		</sequence>
+    </View>
+    <View value="true">
+        <Row value="1"/>
+        <Column value="0"/>
+        <Label value="Personality PCA Result"/>
+                <afterModule value="PersonalityModule"/>
+                <sequence value="true">
+                        <setPersonalityPCAImage/>
+                </sequence>
+                <SaveToDir value="true">
+                    <Directory value="PERSONALITY-MODULE-PCA"/>
+                </SaveToDir>
+    </View>
+</ViewDistribution>
+
+<!-- Size of a single view (352,240) (640,480)-->
+<ViewSize value="true">
+    <Width value="460"/>
+    <Height value="333"/>
+</ViewSize>
+
+</VIEW_PARAMETERS>

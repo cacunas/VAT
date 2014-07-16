@@ -30,6 +30,7 @@
 #include "MODULES/MorphologyModule.h"
 #include "MODULES/ViBeModule.h"
 #include "MODULES/GrayCodeModule.h"
+#include "MODULES/HMTrackingModule.h"
 
 
 //2. Add the module, according to defined class name in the corresponding header file
@@ -63,6 +64,7 @@ ADD_MODULE(segmentationWithColorFilterModule)
 ADD_MODULE(MorphologyModule)
 ADD_MODULE(ViBeModule)
 ADD_MODULE(GrayCodeModule)
+ADD_MODULE(HMTrackingModule)
 
 //3. Register module: sets name, type (if provided), and associates name to list.
 // Available types: ACQUISITION, INITIALIZATION, SEGMENTATION, TRACKING, ANALYSIS, OTHER
@@ -95,4 +97,5 @@ void VideoAnalysis::setAvailableModules() {
 	REGISTER_MODULE(MorphologyModule, SEGMENTATION);
 	REGISTER_MODULE(ViBeModule, SEGMENTATION);
     REGISTER_MODULE(GrayCodeModule, OTHER);
+    REGISTER_MODULE(HMTrackingModule, TRACKING);
 }

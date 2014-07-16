@@ -203,7 +203,8 @@ HEADERS += modules.h \
     CameraThread.h \
     MODULES/AcquisitionCameraModule.h \
     MODELS/DeguTrackingModel.h \
-    MODELS/LightSourceModel.h
+    MODELS/LightSourceModel.h \
+    MODULES/HMTrackingModule.h
 SOURCES += ModulesDialog.cpp \
     modules.cpp \
     main.cpp \
@@ -369,7 +370,8 @@ SOURCES += ModulesDialog.cpp \
     CameraThread.cpp \
     MODULES/AcquisitionCameraModule.cpp \
     MODELS/DeguTrackingModel.cpp \
-    MODELS/LightSourceModel.cpp
+    MODELS/LightSourceModel.cpp \
+    MODULES/HMTrackingModule.cpp
 FORMS += ui/ModulesDialog.ui \
     ui/image_display.ui \
     ui/ImageWindowDisplay.ui \

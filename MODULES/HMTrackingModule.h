@@ -51,16 +51,15 @@ private:
     //Calculates first and second statistical moments of the intesity histograms
     vector<float> calculateMoments(vector<hist> channels);
 
+    //Calculate channels peaks using paper proposed criterias
+    void calculatePeaks(vector<hist> channels);
+
+    //calculate thresholds
+    void calculateThresholds(vector<hist> ch);
 
     //Store grass area of the image on bgImage using a binary classifier
     void GrassClassifier();
 
-
-    //Calculate channels peaks using paper proposed criterias
-    void calculatePeaks(vector<hist> channels);
-
-    //calculates thresholds
-    void calculateThresholds(vector<hist> ch);
 };
 
 #endif // HMTRACKINGMODULE_H

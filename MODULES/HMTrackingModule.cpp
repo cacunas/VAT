@@ -83,7 +83,6 @@ vector<hist> HMTrackingModule::calculateHistograms(QImage *img)
     return channels;
 }
 
-
 vector<float> HMTrackingModule::calculateMoments(vector<hist> channels) {
     vector<float> fMoments(4,0.);
     vector<float> sMoments(4,0.);
@@ -110,50 +109,6 @@ vector<float> HMTrackingModule::calculateMoments(vector<hist> channels) {
 
     return moments;
 }
-
-
-void HMTrackingModule::GrassClassifier()
-{
-    QImage *image = m_data->currentImage;
-
-    /* Histograms for each channel:
-     * 0 - red
-     * 1 - green
-     * 2 - blue
-     * 3 - gray
-     */
-    vector<hist> channels = this->calculateHistograms(image);
-
-    // Compute channels' peaks
-    // red:0, blue:1, green:2, gray:3
-    this->calculatePeaks(channels);
-
-    // Compute thresholds
-    this->calculateThresholds(channels);
-
-    QRgb pixel;
-
-    for (int x=0; x < image->width(); x++) {
-        for (int y=0; y < image->height(); y++) {
-            pixel = image->pixel(x,y);
-            if (
-                    //image.pixel(x,.y).
-                    qGreen(pixel) > qRed(pixel) &&
-                    qGreen(pixel) > qBlue(pixel) &&
-                    abs(qRed(pixel) - A_p[0]) < A_t[0] &&
-                    abs(qGreen(pixel) - A_p[1]) < A_t[1] &&
-                    abs(qBlue(pixel) - A_p[2]) < A_t[2] &&
-                    qGray(pixel) < A_t[3]
-                    )
-            {
-                m_data->bgImage->setPixel(x,y,m_data->currentImage->pixel(x,y)); //image->pixel(x,y);
-            }
-            else
-                m_data->bgImage->setPixel(x,y,0);
-        }
-    }
-}
-
 
 void HMTrackingModule::calculatePeaks(vector<hist> channels)
 {
@@ -197,4 +152,55 @@ void HMTrackingModule::calculateThresholds(vector<hist> ch) {
     }
 
     A_t[3] = A_p[3] + beta * sqrt(moments[7]-moments[3]*moments[3]);
+}
+
+void HMTrackingModule::GrassClassifier()
+{
+    QImage *image = m_data->currentImage;
+
+    /* Histograms for each channel:
+     * 0 - red
+     * 1 - green
+     * 2 - blue
+     * 3 - gray
+     */
+    vector<hist> channels = this->calculateHistograms(image);
+
+    // Compute channels' peaks
+    // red:0, blue:1, green:2, gray:3
+    this->calculatePeaks(channels);
+
+    // Compute thresholds
+    this->calculateThresholds(channels);
+
+    /*
+     * Debug: print peaks and thresholds
+     */
+
+//    for (int i=0; i<4; i++) {
+//        cout <<"Peak ch " << i << ":\t" << A_p[i] << endl;
+//        cout <<"Thre ch " << i << ":\t" << A_t[i] << endl;
+//    }
+
+    QRgb pixel;
+
+    for (int x=0; x < image->width(); x++) {
+        for (int y=0; y < image->height(); y++) {
+            pixel = image->pixel(x,y);
+            if (
+                    qGreen(pixel) > qRed(pixel) &&
+                    qGreen(pixel) > qBlue(pixel) &&
+                    abs(qRed(pixel) - A_p[0]) < A_t[0] &&
+                    abs(qGreen(pixel) - A_p[1]) < A_t[1] &&
+                    abs(qBlue(pixel) - A_p[2]) < A_t[2] &&
+                    qGray(pixel) < A_t[3]
+                    )
+            {
+                //cout << "Debug: Yay!\n" ;
+                m_data->bgImage->setPixel(x,y,m_data->currentImage->pixel(x,y));
+            }
+            else
+                m_data->bgImage->setPixel(x,y,0);
+        }
+    }
 }

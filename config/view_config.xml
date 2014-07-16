@@ -14,7 +14,7 @@
         <Row value="0"/>
         <Column value="1"/>
         <Label value="Grass Detector"/>
-                <afterModule value="dummy"/>
+                <afterModule value="HMTrackingModule"/>
                 <sequence value="true">
                         <setBackground/>
                 </sequence>

@@ -41,7 +41,7 @@
 <!--    <videoDirectory value="/home/mzuniga/VIDEOS/HAMSTER-DIRS/0000" />-->
     <!--videoDirectory value="/home/mzuniga/VIDEOS/DEGUS/CIRCULAR1" /-->
 <!--    <videoDirectory value="/home/mzuniga/VIDEOS/DEGUS/CIRCULAR2" />-->
-    <videoDirectory value="/home/cacunas/Documentos/sandbox/vat-3-0-read-only/VAT-3.0/VideoFiles" />-->
+    <videoDirectory value="/home/cacunas/Dropbox/VideoAnalysisTool/vat-3-0-read-only/VAT-3.0/VideoFiles" />-->
 
     <!--videoDirectory value="/home/mzuniga/VIDEOS/PERSO-JPG" /-->
 
@@ -57,7 +57,7 @@
 <dummy>
     <startFrame value="200" />
     <subDirectories value="no" />
-    <videoDirectory value="/home/cacunas/Documentos/sandbox/vat-3-0-read-only/VAT-3.0/VideoFiles" />
+    <videoDirectory value="/home/cacunas/Dropbox/VideoAnalysisTool/vat-3-0-read-only/VAT-3.0/VideoFiles" />
     <defaultMillisecs value="40" />
     <saveCurrent value="yes" />
 </dummy>

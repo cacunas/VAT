@@ -1,5 +1,8 @@
 #include "HMTrackingModule.h"
 
+using namespace std;
+using namespace cv;
+
 HMTrackingModule::HMTrackingModule(Datapool *i_data) :
     ModuleInterface(i_data) {
     this->firstTime = true;

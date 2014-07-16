@@ -33,7 +33,8 @@ bool HMTrackingModule::run()
         this->firstTime = false;
         if(m_data->bgImage == NULL)
         {
-            m_data->bgImage= new QImage(m_data->currentImage->width(),
+            m_data->bgImage=
+                    new QImage(m_data->currentImage->width(),
                                         m_data->currentImage->height(),
                                         QImage::Format_RGB888); //Set Background
         }
@@ -59,6 +60,57 @@ Mat HMTrackingModule::qimage_to_mat_cpy(QImage* img, int format)
                 img->bytesPerLine()
                 ).clone();
 }
+
+vector<hist> HMTrackingModule::calculateHistograms(QImage *img)
+{
+    vector<hist> channels(4);
+
+    for (int i=0; i<4; i++)
+        channels[i] = hist(256,0);
+
+    QRgb pixel;
+
+    for (int x=0; x<img->width(); x++) {
+        for (int y=0; y<img->height(); y++) {
+            pixel = img->pixel(x,y);
+            channels[0][qRed(pixel)]++;
+            channels[1][qGreen(pixel)]++;
+            channels[2][qBlue(pixel)]++;
+            channels[3][qGray(pixel)]++;
+        }
+    }
+
+    return channels;
+}
+
+
+vector<float> HMTrackingModule::calculateMoments(vector<hist> channels) {
+    vector<float> fMoments(4,0.);
+    vector<float> sMoments(4,0.);
+
+    float num_u=0, num_v=0, den=0;
+
+    for (int ch=0; ch<4; ch++) {
+        for (int i=0; i<256; i++) {
+            if ( channels[ch][i] >= (alpha * channels[ch][cvRound(A_p[ch])]) )
+            {
+                num_u += i*channels[ch][i];
+                num_v += i*i*channels[ch][i];
+                den   += channels[ch][i];
+            }
+        }
+
+        fMoments[ch] = num_u/den;
+        sMoments[ch] = num_v/den;
+        num_u = num_v = den = 0;
+    }
+
+    vector<float> moments = fMoments;
+    moments.insert(moments.end(),sMoments.begin(),sMoments.end());
+
+    return moments;
+}
+
 
 void HMTrackingModule::GrassClassifier()
 {
@@ -105,6 +157,7 @@ void HMTrackingModule::GrassClassifier()
         }
     }
 }
+
 
 void HMTrackingModule::calculatePeaks(hist r, hist g, hist b, hist gray)
 {

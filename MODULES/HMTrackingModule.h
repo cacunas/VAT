@@ -38,8 +38,8 @@ private:
     float alpha, beta;
     float A_p[4];//, G_p, B_p, GL_p; // histogram intensity peaks
     float A_t[4];//, G_t, B_t, GL_t; // intensity thresholds
-    float R_u, G_u, B_u, GL_u; // histogram intensity mean
-    float R_std, G_std, B_std, GL_std; //histogram standar deviation
+    //float R_u, G_u, B_u, GL_u; // histogram intensity mean
+    //float R_std, G_std, B_std, GL_std; //histogram standar deviation
 
 
     //Convert QImage to cv::Mat
@@ -57,7 +57,10 @@ private:
 
 
     //Calculate channels peaks using paper proposed criterias
-    void calculatePeaks(hist r, hist g, hist b, hist gray);
+    void calculatePeaks(vector<hist> channels);
+
+    //calculates thresholds
+    void calculateThresholds(vector<hist> ch);
 };
 
 #endif // HMTRACKINGMODULE_H

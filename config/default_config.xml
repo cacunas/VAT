@@ -54,13 +54,13 @@
     <saveCurrent value="yes" />
 </AcquisitionModule>
 
-<dummy>
+<HMTrackingModule>
     <startFrame value="200" />
     <subDirectories value="no" />
     <videoDirectory value="/home/cacunas/Dropbox/VideoAnalysisTool/vat-3-0-read-only/VAT-3.0/VideoFiles" />
     <defaultMillisecs value="40" />
     <saveCurrent value="yes" />
-</dummy>
+</HMTrackingModule>
 
 
 </MODULE_PARAMETERS>

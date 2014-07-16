@@ -1,11 +1,11 @@
-CONFIG += COMPILE_QT5
+#CONFIG += COMPILE_QT5
 
-COMPILE_QT5 {
-    DEFINES += "__COMPILE_QT5__"
+#COMPILE_QT5 {
+#    DEFINES += "__COMPILE_QT5__"
 
-    QT += widgets
-    QT += printsupport
-}
+#    QT += widgets
+#    QT += printsupport
+#}
 
 win32 { 
     INCLUDEPATH += "C:\\OpenCV-2.2.0\\release\\include"

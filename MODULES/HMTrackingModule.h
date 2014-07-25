@@ -12,6 +12,12 @@
 #include "Datapool.h"
 #include "ModuleInterface.h"
 
+#include "opencv2/opencv.hpp"
+#include <opencv/highgui.h>
+#include <map>
+#include <string>
+#include "image_display.h"
+
 typedef std::vector<int> hist;
 
 using namespace std;
@@ -70,9 +76,12 @@ private:
     //Convert QImage to cv::Mat
     cv::Mat qimage_to_mat_cpy(QImage* img, int format);
 
+<<<<<<< HEAD
     //Convert cv::Mat to QImage
     QImage* Mat2QImage(cv::Mat& mat);
 
+=======
+>>>>>>> 241c16516b6e3ffb1bd54505e2197a9747e8f2d9
     //Calculates Intensity Histograms per channel
     vector<hist> calculateHistograms(QImage* img);
 
@@ -82,14 +91,26 @@ private:
     //Calculate channels peaks using paper proposed criterias
     void calculatePeaks(vector<hist> channels);
 
+<<<<<<< HEAD
     //calculate thresholds
+=======
+    //Calculate thresholds
+>>>>>>> 241c16516b6e3ffb1bd54505e2197a9747e8f2d9
     void calculateThresholds(vector<hist> ch);
 
     //Store grass area of the image on bgImage using a binary classifier
     void GrassClassifier();
 
+<<<<<<< HEAD
     //Applies convolution with the 3x3 h filter, so it can detects line marks on field
     void HFilter(QImage *img);
+=======
+    //Get the line on the grass selection usign Hough Transform
+    void Line_detect();
+
+    //Aplly a filter
+    void ApplyFilter(QImage *f_in, QImage *f_out);
+>>>>>>> 241c16516b6e3ffb1bd54505e2197a9747e8f2d9
 
 };
 

@@ -1,6 +1,6 @@
 <!DOCTYPE VIEW_PARAMETERS>
 <VIEW_PARAMETERS>
-  <ViewDistribution value="2ViewsH">
+  <ViewDistribution value="4Views">
     <View value="true">
         <Row value="0"/>
         <Column value="0"/>
@@ -17,6 +17,24 @@
                 <afterModule value="HMTrackingModule"/>
                 <sequence value="true">
                         <setBackground/>
+                </sequence>
+    </View>
+    <View value="true">
+        <Row value="1"/>
+        <Column value="0"/>
+        <Label value="Gray Background"/>
+                <afterModule value="HMTrackingModule"/>
+                <sequence value="true">
+                        <setColouredForeground/>
+                </sequence>
+    </View>
+    <View value="true">
+        <Row value="1"/>
+        <Column value="1"/>
+        <Label value="Improved Background"/>
+                <afterModule value="HMTrackingModule"/>
+                <sequence value="true">
+                        <setPersonality/>
                 </sequence>
     </View>
   </ViewDistribution>

@@ -49,11 +49,28 @@ bool HMTrackingModule::run()
                                m_data->currentImage->height(),
                                QImage::Format_Indexed8); //Set Background
         }
+        if(m_data->persoImage == NULL)
+        {
+            m_data->persoImage=
+                    new QImage(m_data->currentImage->width(),
+                               m_data->currentImage->height(),
+                               QImage::Format_RGB888); //Set Background
+        }
+        if(m_data->rFgImage == NULL)
+        {
+            m_data->persoImage=
+                    new QImage(m_data->currentImage->width(),
+                               m_data->currentImage->height(),
+                               QImage::Format_RGB888); //Set Background
+        }
 
     }
 
     this->GrassClassifier();
     this->Line_detect();
+
+    this->DLowIntGrad(m_data->currentImage, m_data->persoImage);
+
     return true;
 }
 
@@ -171,11 +188,11 @@ void HMTrackingModule::GrassClassifier()
     QImage *image = m_data->currentImage;
 
     /* Histograms for each channel:
-* 0 - red
-* 1 - green
-* 2 - blue
-* 3 - gray
-*/
+     * 0 - red
+     * 1 - green
+     * 2 - blue
+     * 3 - gray
+     */
     vector<hist> channels = this->calculateHistograms(image);
 
     // Compute channels' peaks
@@ -185,15 +202,7 @@ void HMTrackingModule::GrassClassifier()
     // Compute thresholds
     this->calculateThresholds(channels);
 
-    /*
-* Debug: print peaks and thresholds
-*/
-
-// for (int i=0; i<4; i++) {
-// cout <<"Peak ch " << i << ":\t" << A_p[i] << endl;
-// cout <<"Thre ch " << i << ":\t" << A_t[i] << endl;
-// }
-
+    // Stores current pixel value when reading the image
     QRgb pixel;
 
     for (int x=0; x < image->width(); x++) {
@@ -207,16 +216,14 @@ void HMTrackingModule::GrassClassifier()
                     abs(qBlue(pixel) - A_p[2]) < A_t[2] &&
                     qGray(pixel) < A_t[3]
                     )
-            {
-                //cout << "Debug: Yay!\n" ;
-                int gray = qGray(m_data->currentImage->pixel(x,y));
-                m_data->bgImage->setPixel(x,y,qRgb(gray,gray,gray));
-            }
+
+                m_data->bgImage->setPixel(x,y,m_data->currentImage->pixel(x,y));
             else
                 m_data->bgImage->setPixel(x,y,0);
         }
     }
 }
+
 
 void HMTrackingModule::Line_detect()
 {
@@ -261,6 +268,7 @@ void HMTrackingModule::Line_detect()
 
 }
 
+
 void HMTrackingModule::ApplyFilter(QImage *f_in, QImage *f_out)
 {
     int w = f_in->width(), h = f_in->height();
@@ -277,4 +285,42 @@ void HMTrackingModule::ApplyFilter(QImage *f_in, QImage *f_out)
     filter2D(f, f, -1 , kernel, Point( -1, -1 ), 0, BORDER_DEFAULT );
 
     memcpy(fout_p, f.data, h*bl);
+}
+
+void HMTrackingModule::DLowIntGrad(QImage* src, QImage *dst)
+{
+    if (src == NULL)
+    {
+        cout << "Error: src NULL\n in DLowIntGrad(src,dst)\n";
+        return;
+    }
+
+    // free dst memory first
+    delete dst;
+
+    // Stores current pixel value when reading the image
+    QRgb pixel;
+
+    dst = new QImage(*src);
+
+    //cout << "DEBUG:\t GL_t " << A_t[3] << endl;
+
+    for (int x=0; x < src->width(); x++) {
+        for (int y=0; y < src->height(); y++) {
+            pixel = src->pixel(x,y);
+
+            //cout << "DEBUG:\t qGray(pixel) " << qGray(pixel) << endl;
+
+            if (
+                    qRed(pixel)     >= (A_p[0] + .5*A_t[0]) &&
+                    qGreen(pixel)   >= (A_p[1] + .5*A_t[1]) &&
+                    qBlue(pixel)    >= (A_p[2] + .5*A_t[2]) &&
+                    qGray(pixel)    >= A_t[3]
+                )
+
+                dst->setPixel(x,y,src->pixel(x,y));
+            else
+                dst->setPixel(x,y,qRgb(0,0,0));
+        }
+    }
 }

@@ -1,4 +1,4 @@
-ifndef HMTRACKINGMODULE_H
+#ifndef HMTRACKINGMODULE_H
 #define HMTRACKINGMODULE_H
 
 #include <QImage>
@@ -7,15 +7,12 @@ ifndef HMTRACKINGMODULE_H
 #include <vector>
 #include <cmath>
 #include <QColor>
+#include <QMessageBox>
+
+#include "image_display.h"
 
 #include "Datapool.h"
 #include "ModuleInterface.h"
-
-#include "opencv2/opencv.hpp"
-#include <opencv/highgui.h>
-#include <map>
-#include <string>
-#include "image_display.h"
 
 typedef std::vector<int> hist;
 
@@ -42,11 +39,8 @@ public:
 private:
     bool firstTime;
     float alpha, beta;
-    float A_p[4];//, G_p, B_p, GL_p; // histogram intensity peaks
-    float A_t[4];//, G_t, B_t, GL_t; // intensity thresholds
-    //float R_u, G_u, B_u, GL_u; // histogram intensity mean
-    //float R_std, G_std, B_std, GL_std; //histogram standar deviation
-
+    float A_p[4];// histogram intensity peaks (R,G,B,Gray)
+    float A_t[4];// intensity thresholds (R,G,B,Gray)
 
     //Convert QImage to cv::Mat
     cv::Mat qimage_to_mat_cpy(QImage* img, int format);
@@ -71,6 +65,9 @@ private:
 
     //Aplly a filter
     void ApplyFilter(QImage *f_in, QImage *f_out);
+
+    //Discard Low Intensity and Low Gradient pixels
+    void DLowIntGrad(QImage* src, QImage* dst);
 
 };
 

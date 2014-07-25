@@ -4,6 +4,7 @@
 #include <QImage>
 #include <QDir>
 #include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/core/types_c.h>
 #include <vector>
 #include <cmath>
 #include <QColor>
@@ -33,6 +34,30 @@ public:
     //update parameters at runtime.
     bool updateParameters();
 
+    static cv::Mat qImage2Mat(QImage * qImage)
+    {
+    //	int width = qImage->width();
+        int height = qImage->height();
+
+        void *raw = qImage->bits();
+        int bytesPerLine = qImage->bytesPerLine();
+
+        /*!
+        // Copiando sería así:
+    //	cv::Mat f(height, bytesPerLine, CV_8U);
+    //	memcpy(f.data, raw, height*bytesPerLine);
+        // Y después habría que actualizar la imagen inicial así:
+    //	int height = fg->height();
+    //	int bytesPerLine = fg->bytesPerLine();
+    //	uchar * bits = fg->bits();
+    //	memcpy(bits, image.data, height*bytesPerLine);
+    */
+
+        // Pero yo lo hago chantamente linkeandolo con la representación del QImage
+        cv::Mat f(height, bytesPerLine, CV_8U, raw);
+        return f;
+    }
+
 private:
     bool firstTime;
     float alpha, beta;
@@ -44,6 +69,9 @@ private:
 
     //Convert QImage to cv::Mat
     cv::Mat qimage_to_mat_cpy(QImage* img, int format);
+
+    //Convert cv::Mat to QImage
+    QImage* Mat2QImage(cv::Mat& mat);
 
     //Calculates Intensity Histograms per channel
     vector<hist> calculateHistograms(QImage* img);
@@ -59,6 +87,9 @@ private:
 
     //Store grass area of the image on bgImage using a binary classifier
     void GrassClassifier();
+
+    //Applies convolution with the 3x3 h filter, so it can detects line marks on field
+    void HFilter(QImage *img);
 
 };
 

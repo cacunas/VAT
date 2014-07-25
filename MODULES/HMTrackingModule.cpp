@@ -42,6 +42,7 @@ bool HMTrackingModule::run()
     }
 
     this->GrassClassifier();
+    this->HFilter(m_data->currentImage);
     return true;
 }
 
@@ -59,6 +60,33 @@ Mat HMTrackingModule::qimage_to_mat_cpy(QImage* img, int format)
                 img->bits(),
                 img->bytesPerLine()
                 ).clone();
+}
+
+QImage *HMTrackingModule::Mat2QImage(cv::Mat &mat) {
+    QImage *temp = NULL;
+
+    if(true/*mat.type() == CV_8UC3*/) {
+        temp = new QImage(mat.cols, mat.rows, QImage::Format_RGB32);
+
+        uchar *a = temp->bits();
+        uchar *b = mat.data;
+
+        // I had to use this (2 for) to transform 3 channels to 4, since
+        // the program is using RGB32 format for QImage:
+        for(int j=0; j<mat.rows; j++)
+            for(int i=0; i<mat.cols; i++) {
+                a[j*temp->bytesPerLine() + i*4 + 0] =
+                        b[j*mat.step + i*3 + 0];
+                a[j*temp->bytesPerLine() + i*4 + 1] =
+                        b[j*mat.step + i*3 + 1];
+                a[j*temp->bytesPerLine() + i*4 + 2] =
+                        b[j*mat.step + i*3 + 2];
+                a[j*temp->bytesPerLine() + i*4 + 3] = 255;
+            }
+    } else {
+        //AppendToLog("Mat format not supported to QImage");
+    }
+    return temp;
 }
 
 vector<hist> HMTrackingModule::calculateHistograms(QImage *img)
@@ -197,10 +225,47 @@ void HMTrackingModule::GrassClassifier()
                     )
             {
                 //cout << "Debug: Yay!\n" ;
-                m_data->bgImage->setPixel(x,y,m_data->currentImage->pixel(x,y));
+                int pix = qGray(m_data->currentImage->pixel(x,y));
+                QRgb grayPix = QColor(pix, pix, pix).rgb();
+                m_data->bgImage->setPixel ( x, y, grayPix);
             }
             else
                 m_data->bgImage->setPixel(x,y,0);
         }
     }
+}
+
+void HMTrackingModule::HFilter(QImage* img)
+{
+    cout << "DEBUG:\t entering HFilter()" << endl;
+    //QImage* img = m_data->bgImage;
+    //Mat src = this->qimage_to_mat_cpy(img, CV_8UC3), dst;
+    Mat src = qImage2Mat(img);
+    Mat dst;
+
+    //cout << "DEBUG:\t src= " << src << endl;
+
+    Mat kernel = (Mat_<double>(3,3) << -2, 1, -2, 1, 4, 1, -2, 1, -2);
+
+    cout << "DEBUG:\t kernel= " << kernel << endl;
+
+    //Mat kernel = ( Mat_<float>(3,3) << -2.,1.,-2., 1.,4.,1., -2.,1.,-2.);
+    Point anchor = Point(-1,-1);
+    double delta = 0;
+    int ddepth = -1;
+    //int kernel_size;
+
+    anchor = Point(-1,-1);
+    delta = 0.;
+
+    cout << "DEBUG:\t Before filter2D(...)" << endl;
+    filter2D(src, dst, ddepth , kernel, anchor, delta, BORDER_DEFAULT );
+
+    cout << "DEBUG:\t dst.type()= " << dst.type() << endl;
+
+    m_data->bgImage = this->Mat2QImage(dst);
+
+    //cout << "DEBUG:\t dst= " << dst << endl;
+
+    //m_data->bgImage = this->Mat2QImage(dst);
 }
